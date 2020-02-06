@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\financeiro.ApplicationCore\martloc.ApplicationCore.csproj" />
+    <ProjectReference Include="..\martloc.ApplicationCore\martloc.ApplicationCore.csproj" />
   </ItemGroup>
 
 </Project>

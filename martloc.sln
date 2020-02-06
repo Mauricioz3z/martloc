@@ -9,11 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - UI", "1 - UI", "{2478EA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - infrastructure", "3 - infrastructure", "{716F68EF-D15B-4CAC-8934-BF0D40094936}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "martloc.ApplicationCore", "financeiro.ApplicationCore\martloc.ApplicationCore.csproj", "{2F150B1B-E4E2-48A6-AD49-E2377154B4B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "martloc.ApplicationCore", "martloc.ApplicationCore\martloc.ApplicationCore.csproj", "{2F150B1B-E4E2-48A6-AD49-E2377154B4B1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "martloc.infrastructure", "financeiro.infrastructure\martloc.infrastructure.csproj", "{64BC73E4-E254-4B3D-992C-36CB1048B9E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "martloc.infrastructure", "martloc.infrastructure\martloc.infrastructure.csproj", "{64BC73E4-E254-4B3D-992C-36CB1048B9E2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "martloc.UI.Web", "financeiro.UI.Web\martloc.UI.Web.csproj", "{8703F1AE-8D39-411A-9607-FC887212B5F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "martloc.UI.Web", "martloc.UI.Web\martloc.UI.Web.csproj", "{8703F1AE-8D39-411A-9607-FC887212B5F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

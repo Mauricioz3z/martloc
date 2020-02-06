@@ -18,8 +18,8 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\financeiro.ApplicationCore\martloc.ApplicationCore.csproj" />
-    <ProjectReference Include="..\financeiro.infrastructure\martloc.infrastructure.csproj" />
+    <ProjectReference Include="..\martloc.ApplicationCore\martloc.ApplicationCore.csproj" />
+    <ProjectReference Include="..\martloc.infrastructure\martloc.infrastructure.csproj" />
   </ItemGroup>
 
 
