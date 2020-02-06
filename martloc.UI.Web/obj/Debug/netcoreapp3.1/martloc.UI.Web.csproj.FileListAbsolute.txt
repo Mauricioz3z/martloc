@@ -168,3 +168,6 @@ C:\Users\Mauricio\source\repos\martloc\financeiro.UI.Web\obj\Debug\netcoreapp3.1
 C:\Users\Mauricio\source\repos\martloc\financeiro.UI.Web\obj\Debug\netcoreapp3.1\martloc.UI.Web.csproj.CopyComplete
 C:\Users\Mauricio\source\repos\martloc\financeiro.UI.Web\obj\Debug\netcoreapp3.1\martloc.UI.Web.dll
 C:\Users\Mauricio\source\repos\martloc\financeiro.UI.Web\obj\Debug\netcoreapp3.1\martloc.UI.Web.pdb
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\martloc.UI.Web.csprojAssemblyReference.cache
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\martloc.UI.Web.dll
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\martloc.UI.Web.pdb

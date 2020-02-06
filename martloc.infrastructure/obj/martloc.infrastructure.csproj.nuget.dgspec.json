@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mauricio.souza\\Documents\\mine\\martloc\\martloc.infrastructure\\martloc.infrastructure.csproj": {}
+    "C:\\Users\\Mauricio\\source\\repos\\martloc\\martloc.infrastructure\\martloc.infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mauricio.souza\\Documents\\mine\\martloc\\martloc.ApplicationCore\\martloc.ApplicationCore.csproj": {
+    "C:\\Users\\Mauricio\\source\\repos\\martloc\\martloc.ApplicationCore\\martloc.ApplicationCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mauricio.souza\\Documents\\mine\\martloc\\martloc.ApplicationCore\\martloc.ApplicationCore.csproj",
+        "projectUniqueName": "C:\\Users\\Mauricio\\source\\repos\\martloc\\martloc.ApplicationCore\\martloc.ApplicationCore.csproj",
         "projectName": "martloc.ApplicationCore",
-        "projectPath": "C:\\Users\\mauricio.souza\\Documents\\mine\\martloc\\martloc.ApplicationCore\\martloc.ApplicationCore.csproj",
-        "packagesPath": "C:\\Users\\mauricio.souza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mauricio.souza\\Documents\\mine\\martloc\\martloc.ApplicationCore\\obj\\",
+        "projectPath": "C:\\Users\\Mauricio\\source\\repos\\martloc\\martloc.ApplicationCore\\martloc.ApplicationCore.csproj",
+        "packagesPath": "C:\\Users\\Mauricio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mauricio\\source\\repos\\martloc\\martloc.ApplicationCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\mauricio.souza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mauricio\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -65,20 +65,20 @@
         }
       }
     },
-    "C:\\Users\\mauricio.souza\\Documents\\mine\\martloc\\martloc.infrastructure\\martloc.infrastructure.csproj": {
+    "C:\\Users\\Mauricio\\source\\repos\\martloc\\martloc.infrastructure\\martloc.infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mauricio.souza\\Documents\\mine\\martloc\\martloc.infrastructure\\martloc.infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Mauricio\\source\\repos\\martloc\\martloc.infrastructure\\martloc.infrastructure.csproj",
         "projectName": "martloc.infrastructure",
-        "projectPath": "C:\\Users\\mauricio.souza\\Documents\\mine\\martloc\\martloc.infrastructure\\martloc.infrastructure.csproj",
-        "packagesPath": "C:\\Users\\mauricio.souza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mauricio.souza\\Documents\\mine\\martloc\\martloc.infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Mauricio\\source\\repos\\martloc\\martloc.infrastructure\\martloc.infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Mauricio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mauricio\\source\\repos\\martloc\\martloc.infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\mauricio.souza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mauricio\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -91,8 +91,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\mauricio.souza\\Documents\\mine\\martloc\\martloc.ApplicationCore\\martloc.ApplicationCore.csproj": {
-                "projectPath": "C:\\Users\\mauricio.souza\\Documents\\mine\\martloc\\martloc.ApplicationCore\\martloc.ApplicationCore.csproj"
+              "C:\\Users\\Mauricio\\source\\repos\\martloc\\martloc.ApplicationCore\\martloc.ApplicationCore.csproj": {
+                "projectPath": "C:\\Users\\Mauricio\\source\\repos\\martloc\\martloc.ApplicationCore\\martloc.ApplicationCore.csproj"
               }
             }
           }

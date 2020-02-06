@@ -4,15 +4,14 @@ using System.Text;
 
 namespace financeiro.ApplicationCore.Entity
 {
-   public class Cliente
+   public class Cliente:Fisica
     {
         public Cliente()
         {
 
         }
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Cpf { get; set; }
+     
+      
         public ICollection<Contato> Contatos { get; set; }
 
 

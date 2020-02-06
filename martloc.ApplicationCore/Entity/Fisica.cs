@@ -4,9 +4,8 @@ using System.Text;
 
 namespace martloc.ApplicationCore.Entity
 {
-   public class Pessoa
+    public class Fisica
     {
-        public int Id { get; set; }
-        public string NomeRazao { get; set; }
+        public string Cpf { get; set; }
     }
 }
