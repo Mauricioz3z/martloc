@@ -1,12 +1,13 @@
-﻿using financeiro.ApplicationCore.Entity;
+﻿
+using martloc.ApplicationCore.Entity;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace financeiro.infrastructure.Data
+namespace martloc.infrastructure.Data
 {
    public static class DbInitializer
     {
@@ -81,26 +82,83 @@ namespace financeiro.infrastructure.Data
             }
 
 
-            if (context.Cliente.Any())
-            {
-                return;
-            }
+            //if (context.Pessoa.Any())
+            //{
+            //    return;
+            //}
 
-            var clientes = new Cliente[] { 
-                new Cliente { Nome = "Mauricio jose de souza", Cpf = "1111111111" },
-                new Cliente { Nome = "Claudio Junior", Cpf = "1111111111" },
 
-            };
 
-            var contatos = new Contato[] {
-                new Contato { Nome = "Contato 1", Email = "teste1@gmail.com",Cliente=clientes[0] },
-                new Contato { Nome = "Contato2 ", Email = "teste2@gmail.com",Cliente=clientes[1] },
+
+
+            var pessoaFisica = new Fisica[] { 
+                new Fisica { NomeRazao = "Mauricio jose de souza", Cpf="4311980876", Apelido="Menino mau",  DataNascimento =DateTime.Now.AddYears(-23),Fone="(18) 99999-888888"},
+                new Fisica { NomeRazao = "Claudio Junior",Cpf="45418545765457", Apelido="Sueco", DataNascimento =DateTime.Now.AddYears(-22),Fone="(18) 99999-888888" },
 
             };
 
-            context.AddRange(clientes);
-            context.AddRange(contatos);
-            context.SaveChanges();
+            //var contatos = new Contato[] {
+            //    new Contato { Nome = "Contato 1", Email = "teste1@gmail.com",Cliente=pessoaFisica[0] },
+            //    new Contato { Nome = "Contato2 ", Email = "teste2@gmail.com",Cliente=pessoaFisica[1] },
+
+            //};
+
+
+
+           // var Categorias = new Categoria[] {
+           //     new Categoria { Descricao = "Cimento & Argamassa"},
+           //     new Categoria { Descricao = "Perfuração" },
+           //     new Categoria { Descricao = "Corte" },
+           //     new Categoria { Descricao = "Demolição" },
+           //     new Categoria { Descricao = "Estruturas" }
+           // };
+
+           // var marcas = new Marca[] {
+           //     new Marca { Descricao = "CSM"},
+           //     new Marca { Descricao = "BOSCH" },
+           //     new Marca { Descricao = "Makita" },
+           //     new Marca { Descricao = "DeWalt" },
+           //     new Marca { Descricao = "Still" },
+
+
+           // };
+
+           // var equipamentos = new Equipamento[] {
+           //     new Equipamento { Descricao = "Betoneira",Marca=marcas[0],Categoria=Categorias[0]},
+           //     new Equipamento { Descricao = "Furadeira",Marca=marcas[1],Categoria=Categorias[1] },
+
+           // };
+
+
+
+          
+
+           // var locacao = new Locacao[] {
+           //     new Locacao { DataContrato  = DateTime.Now,Pessoa=pessoaFisica[0]},
+               
+
+           // };
+
+           // var locacaoItens = new LocacaoItens[] {
+           //     new LocacaoItens { Equipamento =equipamentos[0],Locacao=locacao[0]},
+           //     new LocacaoItens { Equipamento = equipamentos[1],Locacao=locacao[0] },
+
+           // };
+
+
+           // //var x = context.Locacao.Include("LocacaoItens.Equipamento").ToList();
+
+
+           // context.AddRange(pessoaFisica);
+           //// context.AddRange(contatos);
+
+
+           // context.AddRange(equipamentos);
+           // context.AddRange(locacao);
+           // context.AddRange(locacaoItens);
+
+            
+           // context.SaveChanges();
 
 
         }

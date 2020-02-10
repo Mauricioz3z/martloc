@@ -1,11 +1,12 @@
-﻿using financeiro.ApplicationCore.Interfaces.Repository;
-using financeiro.ApplicationCore.Interfaces.Services;
+﻿using martloc.ApplicationCore.Interfaces.Repository;
+using martloc.ApplicationCore.Interfaces.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace financeiro.ApplicationCore.Services
+namespace martloc.ApplicationCore.Services
 {
     public class ServiceBase<T> : IServiceBase<T> where T : class
     {
@@ -47,7 +48,7 @@ namespace financeiro.ApplicationCore.Services
         //{
         //    _clienteRepository.Remover(entity);
         //}
-        public IEnumerable<T> List => _repository.ObterTodos();
+        public IQueryable<T> List => _repository.ObterTodos();
 
         public T Adicionar(T entity)
         {

@@ -1,21 +1,22 @@
-﻿using System;
+﻿using martloc.ApplicationCore.Entity;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace financeiro.ApplicationCore.Entity
 {
-   public class Cliente:Fisica
-    {
-        public Cliente()
-        {
+   //public class Cliente:Pessoa
+   // {
+   //     public Cliente()
+   //     {
 
-        }
-     
+   //     }
+         
       
-        public ICollection<Contato> Contatos { get; set; }
+      
 
 
-    }
+   // }
 
   
 

@@ -1,14 +1,15 @@
-﻿using financeiro.ApplicationCore.Entity;
-using financeiro.ApplicationCore.Interfaces.Repository;
-using financeiro.ApplicationCore.Interfaces.Services;
+﻿
+using martloc.ApplicationCore.Interfaces.Services;
+using martloc.ApplicationCore.Entity;
+using martloc.ApplicationCore.Interfaces.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace financeiro.ApplicationCore.Services
+namespace martloc.ApplicationCore.Services
 {
-    public class ClienteServices : ServiceBase<Cliente>, IClienteServices
+    public class ClienteServices : ServiceBase<Pessoa>, IClienteServices
     { 
         //Regra de negocio aqui
 
@@ -19,7 +20,7 @@ namespace financeiro.ApplicationCore.Services
             _clienteReposotory = Repository;
         }
 
-        public Cliente ObterClientePorContato(int contatoId)
+        public Pessoa ObterClientePorContato(int contatoId)
         {
            return _clienteReposotory.ObterClientePorContato(contatoId);
         }

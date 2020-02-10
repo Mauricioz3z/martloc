@@ -1,5 +1,5 @@
-﻿using financeiro.ApplicationCore.Interfaces.Repository;
-using financeiro.infrastructure.Data;
+﻿using martloc.ApplicationCore.Interfaces.Repository;
+using martloc.infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -41,9 +41,9 @@ namespace financeiro.infrastructure.Repositoty
             return _dbContext.Set<TEntity>().Find(Id);
         }
 
-        public IEnumerable<TEntity> ObterTodos()
+        public IQueryable<TEntity> ObterTodos()
         {
-            return _dbContext.Set<TEntity>().AsEnumerable();
+            return _dbContext.Set<TEntity>().AsQueryable();
         }
 
         public void Remover(TEntity entity)

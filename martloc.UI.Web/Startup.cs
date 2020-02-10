@@ -6,14 +6,20 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using financeiro.infrastructure.Data;
-using financeiro.ApplicationCore.Interfaces.Services;
-using financeiro.ApplicationCore.Services;
-using financeiro.ApplicationCore.Interfaces.Repository;
+using martloc.infrastructure.Data;
+using martloc.ApplicationCore.Interfaces.Services;
+using martloc.ApplicationCore.Services;
+using martloc.ApplicationCore.Interfaces.Repository;
 using financeiro.infrastructure.Repositoty;
-using financeiro.ApplicationCore.Entity;
+using martloc.ApplicationCore.Entity;
 using Microsoft.AspNetCore.HttpOverrides;
 using System.Net;
+using martloc.infrastructure.Repositoty;
+using financeiro.UI.Web.Models;
+using AutoMapper;
+using martloc.UI.Web.Models;
+using Newtonsoft;
+using Newtonsoft.Json;
 
 namespace financeiro.UI.Web
 {
@@ -29,7 +35,7 @@ namespace financeiro.UI.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+             
             services.AddIdentity<Usuario, IdentityRole>(options=> {
                 options.Password.RequiredLength = 6;
                 options.Password.RequireLowercase = false;
@@ -48,10 +54,21 @@ namespace financeiro.UI.Web
             services.AddRazorPages();
             services.AddDbContext<BackendContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddMvc().AddRazorPagesOptions(options =>
-            {
-                options.Conventions.AddPageRoute("/Home/Index", "");
-            });
+            //services.AddMvc().AddRazorPagesOptions(options =>
+            //{
+            //    options.Conventions.AddPageRoute("/Home/Index", "");
+
+      
+            //});
+
+            services.AddMvc()
+               .AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
+
+
+
+
+
+
 
             services.Configure<ForwardedHeadersOptions>(options =>
             {
@@ -61,10 +78,29 @@ namespace financeiro.UI.Web
 
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient(typeof(IClienteRepository), typeof(ClienteRepository));
-            services.AddTransient(typeof(IClienteServices), typeof(ClienteServices));
-            services.AddTransient(typeof(IUsuarioServices), typeof(UsuarioServices));
-            
+            services.AddTransient(typeof(ILocacaoRepository), typeof(LocacaoRepository));
 
+
+            services.AddTransient(typeof(IClienteServices), typeof(ClienteServices));
+           
+            services.AddTransient(typeof(IUsuarioServices), typeof(UsuarioServices));
+            services.AddTransient(typeof(ILocacaoServices), typeof(LocacaoServices));
+
+            var config = new AutoMapper.MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<UsuarioViewModel, Usuario>();
+                //cfg.CreateMap<List<LocacaoViewModel>, List<Locacao>>();
+                cfg.CreateMap<Locacao, LocacaoViewModel>();
+                cfg.CreateMap<LocacaoItens, LocacaoItensViewModel>();
+                cfg.CreateMap<Pessoa, PessoaViewModel>();
+                cfg.CreateMap<Contato, ContatoViewModel>();
+                cfg.CreateMap<Equipamento, EquipamentoViewModel>();
+                cfg.CreateMap<Marca, MarcaViewModel>();
+                cfg.CreateMap<Categoria, CategoriaViewModel>();
+            });
+            IMapper mapper = config.CreateMapper();
+
+            services.AddSingleton(mapper);
 
 
         }

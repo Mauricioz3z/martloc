@@ -1,12 +1,13 @@
-﻿using financeiro.ApplicationCore.Entity;
+﻿
+using martloc.ApplicationCore.Entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace financeiro.ApplicationCore.Interfaces.Repository
+namespace martloc.ApplicationCore.Interfaces.Repository
 {
-   public interface  IClienteRepository:IRepository<Cliente>
+   public interface  IClienteRepository:IRepository<Pessoa>
     {
-         Cliente ObterClientePorContato(int contatoId);
+        Pessoa ObterClientePorContato(int contatoId);
     }
 }

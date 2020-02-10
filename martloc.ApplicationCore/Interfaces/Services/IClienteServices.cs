@@ -1,14 +1,14 @@
-﻿using financeiro.ApplicationCore.Entity;
+﻿using martloc.ApplicationCore.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace financeiro.ApplicationCore.Interfaces.Services
+namespace martloc.ApplicationCore.Interfaces.Services
 {
-  public  interface IClienteServices : IServiceBase<Cliente>    {
+  public  interface IClienteServices : IServiceBase<Pessoa>    {
         //da pra melhorar essa classe trabalhando com  dados gernericos
-        Cliente ObterClientePorContato(int contatoId);
+        Pessoa ObterClientePorContato(int contatoId);
 
 
     }

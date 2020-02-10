@@ -1,9 +1,9 @@
-﻿using financeiro.ApplicationCore.Entity;
+﻿using martloc.ApplicationCore.Entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace financeiro.ApplicationCore.Interfaces.Services
+namespace martloc.ApplicationCore.Interfaces.Services
 {
    public interface IUsuarioServices :IServiceBase<Usuario>
     {

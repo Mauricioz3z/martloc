@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Identity;
 
-namespace financeiro.ApplicationCore.Entity
+namespace martloc.ApplicationCore.Entity
 {
     public class Usuario:IdentityUser
     {

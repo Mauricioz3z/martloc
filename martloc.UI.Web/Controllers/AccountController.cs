@@ -1,5 +1,5 @@
 ﻿
-using financeiro.ApplicationCore.Entity;
+using martloc.ApplicationCore.Entity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 
-namespace financeiro.UI.Web.Controllers
+namespace martloc.UI.Web.Controllers
 {
     public class AccountController : Controller
     {

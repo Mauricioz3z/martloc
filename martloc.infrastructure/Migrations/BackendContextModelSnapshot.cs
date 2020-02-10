@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using financeiro.infrastructure.Data;
+using martloc.infrastructure.Data;
 
-namespace financeiro.infrastructure.Migrations
+namespace martloc.infrastructure.Migrations
 {
     [DbContext(typeof(BackendContext))]
     partial class BackendContextModelSnapshot : ModelSnapshot
@@ -150,33 +150,30 @@ namespace financeiro.infrastructure.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("financeiro.ApplicationCore.Entity.Cliente", b =>
+            modelBuilder.Entity("martloc.ApplicationCore.Entity.Categoria", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Cpf")
+                    b.Property<string>("Descricao")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cliente");
+                    b.ToTable("Categoria");
                 });
 
-            modelBuilder.Entity("financeiro.ApplicationCore.Entity.Contato", b =>
+            modelBuilder.Entity("martloc.ApplicationCore.Entity.Contato", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("ClienteId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(100)")
@@ -186,14 +183,140 @@ namespace financeiro.infrastructure.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
+                    b.Property<int>("PessoaId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("ClienteId");
+                    b.HasIndex("PessoaId");
 
                     b.ToTable("Contato");
                 });
 
-            modelBuilder.Entity("financeiro.ApplicationCore.Entity.Usuario", b =>
+            modelBuilder.Entity("martloc.ApplicationCore.Entity.Equipamento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CategoriaId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("MarcaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("ValorDiario")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<decimal>("ValorMensal")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<decimal>("ValorQuinzenal")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoriaId");
+
+                    b.HasIndex("MarcaId");
+
+                    b.ToTable("Equipamento");
+                });
+
+            modelBuilder.Entity("martloc.ApplicationCore.Entity.Locacao", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("DataContrato")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("PessoaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PessoaId");
+
+                    b.ToTable("Locacao");
+                });
+
+            modelBuilder.Entity("martloc.ApplicationCore.Entity.LocacaoItens", b =>
+                {
+                    b.Property<int>("EquipamentoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LocacaoId")
+                        .HasColumnType("int");
+
+                    b.HasKey("EquipamentoId", "LocacaoId");
+
+                    b.HasIndex("LocacaoId");
+
+                    b.ToTable("LocacaoItens");
+                });
+
+            modelBuilder.Entity("martloc.ApplicationCore.Entity.Marca", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Marca");
+                });
+
+            modelBuilder.Entity("martloc.ApplicationCore.Entity.Pessoa", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Endereco")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Fone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NomeRazao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Pessoa");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Pessoa");
+                });
+
+            modelBuilder.Entity("martloc.ApplicationCore.Entity.Usuario", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -264,6 +387,44 @@ namespace financeiro.infrastructure.Migrations
                     b.ToTable("Usuario");
                 });
 
+            modelBuilder.Entity("martloc.ApplicationCore.Entity.Fisica", b =>
+                {
+                    b.HasBaseType("martloc.ApplicationCore.Entity.Pessoa");
+
+                    b.Property<string>("Apelido")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cpf")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DataNascimento")
+                        .HasColumnType("datetime2");
+
+                    b.HasDiscriminator().HasValue("Fisica");
+                });
+
+            modelBuilder.Entity("martloc.ApplicationCore.Entity.Juridica", b =>
+                {
+                    b.HasBaseType("martloc.ApplicationCore.Entity.Pessoa");
+
+                    b.Property<string>("Cnpj")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DataFundacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("InscricaoEstadual")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InscricaoMunicipal")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NomeFantasia")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("Juridica");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -275,7 +436,7 @@ namespace financeiro.infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("financeiro.ApplicationCore.Entity.Usuario", null)
+                    b.HasOne("martloc.ApplicationCore.Entity.Usuario", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -284,7 +445,7 @@ namespace financeiro.infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("financeiro.ApplicationCore.Entity.Usuario", null)
+                    b.HasOne("martloc.ApplicationCore.Entity.Usuario", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -299,7 +460,7 @@ namespace financeiro.infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("financeiro.ApplicationCore.Entity.Usuario", null)
+                    b.HasOne("martloc.ApplicationCore.Entity.Usuario", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -308,18 +469,51 @@ namespace financeiro.infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("financeiro.ApplicationCore.Entity.Usuario", null)
+                    b.HasOne("martloc.ApplicationCore.Entity.Usuario", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("financeiro.ApplicationCore.Entity.Contato", b =>
+            modelBuilder.Entity("martloc.ApplicationCore.Entity.Contato", b =>
                 {
-                    b.HasOne("financeiro.ApplicationCore.Entity.Cliente", "Cliente")
+                    b.HasOne("martloc.ApplicationCore.Entity.Pessoa", "Pessoa")
                         .WithMany("Contatos")
-                        .HasForeignKey("ClienteId")
+                        .HasForeignKey("PessoaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("martloc.ApplicationCore.Entity.Equipamento", b =>
+                {
+                    b.HasOne("martloc.ApplicationCore.Entity.Categoria", "Categoria")
+                        .WithMany()
+                        .HasForeignKey("CategoriaId");
+
+                    b.HasOne("martloc.ApplicationCore.Entity.Marca", "Marca")
+                        .WithMany()
+                        .HasForeignKey("MarcaId");
+                });
+
+            modelBuilder.Entity("martloc.ApplicationCore.Entity.Locacao", b =>
+                {
+                    b.HasOne("martloc.ApplicationCore.Entity.Pessoa", "Pessoa")
+                        .WithMany()
+                        .HasForeignKey("PessoaId");
+                });
+
+            modelBuilder.Entity("martloc.ApplicationCore.Entity.LocacaoItens", b =>
+                {
+                    b.HasOne("martloc.ApplicationCore.Entity.Equipamento", "Equipamento")
+                        .WithMany("LocacaoItens")
+                        .HasForeignKey("EquipamentoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("martloc.ApplicationCore.Entity.Locacao", "Locacao")
+                        .WithMany("LocacaoItens")
+                        .HasForeignKey("LocacaoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
