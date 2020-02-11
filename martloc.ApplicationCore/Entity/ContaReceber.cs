@@ -5,17 +5,18 @@ using System.Text;
 
 namespace martloc.ApplicationCore.Entity
 {
-  public  class LocacaoItens
+   public class ContaReceber
     {
-        public int LocacaoId { get; set; }
-        public int EquipamentoId { get; set; }
-        public int Quantidade { get; set; }
+        public int Id { get; set; }
+        public DateTime DataMaxPagamento { get; set; }
         [Column(TypeName = "decimal(10,2)")]
         public decimal Valor { get; set; }
 
+        public int Quitado { get; set; }
+
+        public int LocacaoId { get; set; }
         public Locacao Locacao { get; set; }
 
-        public Equipamento Equipamento { get; set; }
 
 
     }
