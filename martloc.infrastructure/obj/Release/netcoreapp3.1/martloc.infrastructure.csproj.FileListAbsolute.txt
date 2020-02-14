@@ -1,0 +1,13 @@
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\bin\Release\netcoreapp3.1\martloc.infrastructure.deps.json
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\bin\Release\netcoreapp3.1\martloc.infrastructure.runtimeconfig.json
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\bin\Release\netcoreapp3.1\martloc.infrastructure.runtimeconfig.dev.json
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\bin\Release\netcoreapp3.1\martloc.infrastructure.dll
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\bin\Release\netcoreapp3.1\martloc.infrastructure.pdb
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\bin\Release\netcoreapp3.1\martloc.ApplicationCore.dll
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\bin\Release\netcoreapp3.1\martloc.ApplicationCore.pdb
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\obj\Release\netcoreapp3.1\martloc.infrastructure.csprojAssemblyReference.cache
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\obj\Release\netcoreapp3.1\martloc.infrastructure.AssemblyInfoInputs.cache
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\obj\Release\netcoreapp3.1\martloc.infrastructure.AssemblyInfo.cs
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\obj\Release\netcoreapp3.1\martloc.infrastructure.csproj.CopyComplete
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\obj\Release\netcoreapp3.1\martloc.infrastructure.dll
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\obj\Release\netcoreapp3.1\martloc.infrastructure.pdb

@@ -264,6 +264,12 @@ namespace martloc.infrastructure.Migrations
                     b.Property<int>("LocacaoId")
                         .HasColumnType("int");
 
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Valor")
+                        .HasColumnType("decimal(10,2)");
+
                     b.HasKey("EquipamentoId", "LocacaoId");
 
                     b.HasIndex("LocacaoId");

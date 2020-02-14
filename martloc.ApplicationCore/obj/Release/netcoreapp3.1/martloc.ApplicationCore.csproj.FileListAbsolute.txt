@@ -1,0 +1,8 @@
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\bin\Release\netcoreapp3.1\martloc.ApplicationCore.deps.json
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\bin\Release\netcoreapp3.1\martloc.ApplicationCore.dll
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\bin\Release\netcoreapp3.1\martloc.ApplicationCore.pdb
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\obj\Release\netcoreapp3.1\martloc.ApplicationCore.csprojAssemblyReference.cache
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\obj\Release\netcoreapp3.1\martloc.ApplicationCore.AssemblyInfoInputs.cache
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\obj\Release\netcoreapp3.1\martloc.ApplicationCore.AssemblyInfo.cs
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\obj\Release\netcoreapp3.1\martloc.ApplicationCore.dll
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\obj\Release\netcoreapp3.1\martloc.ApplicationCore.pdb
