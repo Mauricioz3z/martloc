@@ -348,3 +348,5 @@ C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Ra
 C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Marca\Create.cshtml.g.cs
 C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Pessoa\Index.cshtml.g.cs
 C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Marca\_MarcaForm.cshtml.g.cs
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Equipamento\Index.cshtml.g.cs
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Pessoa\_PessoaForm.cshtml.g.cs

@@ -2,13 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using martloc.ApplicationCore.Interfaces.Services;
+using martloc.UI.Web.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace martloc.UI.Web.Controllers
 {
     public class PessoaController : Controller
+
     {
+
+        private readonly IPessoaServices _pessoaServices;
+        private readonly IMapper _mapper;
+
+        public PessoaController(IPessoaServices pessoaServices, IMapper mapper)
+        {
+            _pessoaServices = pessoaServices;
+            _mapper = mapper;
+        }
+
         // GET: Pessoa
         public ActionResult Index()
         {
@@ -88,6 +102,16 @@ namespace martloc.UI.Web.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult GetPessoas()
+        {
+
+
+            var pessoas = _mapper.Map<List<PessoaViewModel>>(_pessoaServices.List);
+
+            return Json(new { data = pessoas });
+
         }
     }
 }

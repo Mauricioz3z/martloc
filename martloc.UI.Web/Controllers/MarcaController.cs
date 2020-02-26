@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using martloc.ApplicationCore.Entity;
+using martloc.ApplicationCore.Interfaces.Services;
+using martloc.UI.Web.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +13,14 @@ namespace martloc.UI.Web.Controllers
 {
     public class MarcaController : Controller
     {
+        private readonly IMarcaServices _marcaoServices;
+        private readonly IMapper _mapper;
+
+        public MarcaController(IMarcaServices marcaoServices, IMapper mapper)
+        {
+            _marcaoServices= marcaoServices;
+            _mapper= mapper;
+         } 
         // GET: Marca
         public ActionResult Index()
         {
@@ -29,21 +41,29 @@ namespace martloc.UI.Web.Controllers
 
         // POST: Marca/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        //[ValidateAntiForgeryToken]
+        public int Create(MarcaViewModel model)
         {
+
+
+          var marca=  _mapper.Map<Marca>(model);
+
             try
             {
+                _marcaoServices.Adicionar(marca);
                 // TODO: Add insert logic here
 
-                return RedirectToAction(nameof(Index));
+                return 1;
             }
-            catch
+            catch (Exeption e)
             {
-                return View();
+                return -1;
             }
         }
 
+
+
+        
         // GET: Marca/Edit/5
         public ActionResult Edit(int id)
         {
@@ -52,52 +72,56 @@ namespace martloc.UI.Web.Controllers
 
         // POST: Marca/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        //[ValidateAntiForgeryToken]
+        public int Edit(MarcaViewModel model)
         {
+
+            var marca = _mapper.Map<Marca>(model);
+
             try
             {
-                // TODO: Add update logic here
+                _marcaoServices.Atualizar(marca);
+                // TODO: Add insert logic here
 
-                return RedirectToAction(nameof(Index));
+                return 1;
             }
-            catch
+            catch (Exeption e)
             {
-                return View();
+                return -1;
             }
         }
 
         // GET: Marca/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+        //public ActionResult Delete(int id)
+        //{
+        //    return View();
+        //}
 
         // POST: Marca/Delete/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        //[ValidateAntiForgeryToken]
+        public int Delete(int id)
         {
             try
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction(nameof(Index));
+                var marca =_marcaoServices.ObterPorId(id);
+                if (marca != null) {
+                    _marcaoServices.Remover(marca);
+                    return 1;
+                }
+                else { return -1; }
             }
             catch
             {
-                return View();
+                return -1;
             }
         }
 
         public ActionResult GetMarcas()
         {
-            List<object> marcas = new List<object>();
-            for (int i = 0; i < 10; i++)
-            {
-                marcas.Add(new { Id=i,Descricao = "Marca " + i,Status=1 });
-               
-            }
+
+
+            var marcas = _mapper.Map<List<MarcaViewModel>>(_marcaoServices.List);
 
                 return Json(new{data= marcas });
             

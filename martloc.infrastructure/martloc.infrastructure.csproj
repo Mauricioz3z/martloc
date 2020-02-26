@@ -18,4 +18,8 @@
     <ProjectReference Include="..\martloc.ApplicationCore\martloc.ApplicationCore.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

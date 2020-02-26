@@ -91,11 +91,6 @@ namespace martloc.infrastructure.Data
 
 
 
-            var pessoaFisica = new Fisica[] { 
-                new Fisica { NomeRazao = "Mauricio jose de souza", Cpf="4311980876", Apelido="Menino mau",  DataNascimento =DateTime.Now.AddYears(-23),Fone="(18) 99999-888888"},
-                new Fisica { NomeRazao = "Claudio Junior",Cpf="45418545765457", Apelido="Sueco", DataNascimento =DateTime.Now.AddYears(-22),Fone="(18) 99999-888888" },
-
-            };
 
             //var contatos = new Contato[] {
             //    new Contato { Nome = "Contato 1", Email = "teste1@gmail.com",Cliente=pessoaFisica[0] },
@@ -105,60 +100,61 @@ namespace martloc.infrastructure.Data
 
 
 
-           // var Categorias = new Categoria[] {
-           //     new Categoria { Descricao = "Cimento & Argamassa"},
-           //     new Categoria { Descricao = "Perfuração" },
-           //     new Categoria { Descricao = "Corte" },
-           //     new Categoria { Descricao = "Demolição" },
-           //     new Categoria { Descricao = "Estruturas" }
-           // };
+            //var pessoaFisica = new Fisica[] {
+            //    new Fisica { NomeRazao = "Mauricio jose de souza", Cpf="4311980876", Apelido="Menino mau",  DataNascimento =DateTime.Now.AddYears(-23),Fone="(18) 99999-888888"},
+            //    new Fisica { NomeRazao = "Claudio Junior",Cpf="45418545765457", Apelido="Sueco", DataNascimento =DateTime.Now.AddYears(-22),Fone="(18) 99999-888888" },
 
-           // var marcas = new Marca[] {
-           //     new Marca { Descricao = "CSM"},
-           //     new Marca { Descricao = "BOSCH" },
-           //     new Marca { Descricao = "Makita" },
-           //     new Marca { Descricao = "DeWalt" },
-           //     new Marca { Descricao = "Still" },
+            //};
 
 
-           // };
+            //var Categorias = new Categoria[] {
+            //    new Categoria { Descricao = "Cimento & Argamassa"},
+            //    new Categoria { Descricao = "Perfuração" },
+            //    new Categoria { Descricao = "Corte" },
+            //    new Categoria { Descricao = "Demolição" },
+            //    new Categoria { Descricao = "Estruturas" }
+            //};
 
-           // var equipamentos = new Equipamento[] {
-           //     new Equipamento { Descricao = "Betoneira",Marca=marcas[0],Categoria=Categorias[0]},
-           //     new Equipamento { Descricao = "Furadeira",Marca=marcas[1],Categoria=Categorias[1] },
-
-           // };
-
-
-
-          
-
-           // var locacao = new Locacao[] {
-           //     new Locacao { DataContrato  = DateTime.Now,Pessoa=pessoaFisica[0]},
-               
-
-           // };
-
-           // var locacaoItens = new LocacaoItens[] {
-           //     new LocacaoItens { Equipamento =equipamentos[0],Locacao=locacao[0]},
-           //     new LocacaoItens { Equipamento = equipamentos[1],Locacao=locacao[0] },
-
-           // };
+            //var marcas = new Marca[] {
+            //    new Marca { Descricao = "CSM"},
+            //    new Marca { Descricao = "BOSCH" },
+            //    new Marca { Descricao = "Makita" },
+            //    new Marca { Descricao = "DeWalt" },
+            //    new Marca { Descricao = "Still" },
 
 
-           // //var x = context.Locacao.Include("LocacaoItens.Equipamento").ToList();
+            //};
+
+            //var equipamentos = new Equipamento[] {
+            //    new Equipamento { Descricao = "Betoneira",Marca=marcas[0],Categoria=Categorias[0]},
+            //    new Equipamento { Descricao = "Furadeira",Marca=marcas[1],Categoria=Categorias[1] },
+
+            //};
 
 
-           // context.AddRange(pessoaFisica);
-           //// context.AddRange(contatos);
 
 
-           // context.AddRange(equipamentos);
-           // context.AddRange(locacao);
-           // context.AddRange(locacaoItens);
 
-            
-           // context.SaveChanges();
+            //var locacao = new Locacao[] {
+            //    new Locacao { Descricao="Locação1", DataContrato  = DateTime.Now,Pessoa=pessoaFisica[0]},
+
+
+            //};
+
+            //var locacaoItens = new LocacaoItens[] {
+            //    new LocacaoItens { Equipamento =equipamentos[0],Locacao=locacao[0]},
+            //    new LocacaoItens { Equipamento = equipamentos[1],Locacao=locacao[0] },
+
+            //};
+
+
+         
+
+            //context.AddRange(pessoaFisica);
+            //context.AddRange(equipamentos);
+            //context.AddRange(locacao);
+            //context.AddRange(locacaoItens);
+            //context.SaveChanges();
 
 
         }

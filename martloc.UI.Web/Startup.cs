@@ -46,7 +46,7 @@ namespace financeiro.UI.Web
             }).AddDefaultUI().AddDefaultTokenProviders().AddEntityFrameworkStores<BackendContext>();
 
             services.AddDbContext<BackendContext>(options =>
-                options.UseSqlServer(
+                options.UseMySql(
                     Configuration.GetConnectionString("DefaultConnection")));
 
   
@@ -81,8 +81,9 @@ namespace financeiro.UI.Web
             services.AddTransient(typeof(ILocacaoRepository), typeof(LocacaoRepository));
 
 
+            services.AddTransient(typeof(IPessoaServices), typeof(PessoaServices));
+            services.AddTransient(typeof(IMarcaServices), typeof(MarcaServices));
             services.AddTransient(typeof(IClienteServices), typeof(ClienteServices));
-           
             services.AddTransient(typeof(IUsuarioServices), typeof(UsuarioServices));
             services.AddTransient(typeof(ILocacaoServices), typeof(LocacaoServices));
 
@@ -96,7 +97,11 @@ namespace financeiro.UI.Web
                 cfg.CreateMap<Contato, ContatoViewModel>();
                 cfg.CreateMap<Equipamento, EquipamentoViewModel>();
                 cfg.CreateMap<Marca, MarcaViewModel>();
+                cfg.CreateMap<MarcaViewModel , Marca>();
                 cfg.CreateMap<Categoria, CategoriaViewModel>();
+
+                cfg.CreateMap<Pessoa, PessoaViewModel>();
+                cfg.CreateMap<PessoaViewModel, Pessoa>();
             });
             IMapper mapper = config.CreateMapper();
 
