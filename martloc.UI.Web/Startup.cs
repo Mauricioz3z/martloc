@@ -86,6 +86,8 @@ namespace financeiro.UI.Web
             services.AddTransient(typeof(IClienteServices), typeof(ClienteServices));
             services.AddTransient(typeof(IUsuarioServices), typeof(UsuarioServices));
             services.AddTransient(typeof(ILocacaoServices), typeof(LocacaoServices));
+            services.AddTransient(typeof(IFisicaServices), typeof(FisicaServices));
+            services.AddTransient(typeof(IJuridicaServices), typeof(JuridicaServices));
 
             var config = new AutoMapper.MapperConfiguration(cfg =>
             {
@@ -102,6 +104,21 @@ namespace financeiro.UI.Web
 
                 cfg.CreateMap<Pessoa, PessoaViewModel>();
                 cfg.CreateMap<PessoaViewModel, Pessoa>();
+
+
+                cfg.CreateMap<Fisica, FisicaViewModel>();
+                cfg.CreateMap<FisicaViewModel, Fisica>();
+
+                cfg.CreateMap<Juridica, JuridicaViewModel>();
+                cfg.CreateMap<JuridicaViewModel, Juridica>();
+
+
+                cfg.CreateMap<Fisica, PessoaViewModel>();
+                cfg.CreateMap<PessoaViewModel, Fisica>();
+
+                cfg.CreateMap<Juridica, PessoaViewModel>();
+                cfg.CreateMap<PessoaViewModel, Juridica>();
+
             });
             IMapper mapper = config.CreateMapper();
 

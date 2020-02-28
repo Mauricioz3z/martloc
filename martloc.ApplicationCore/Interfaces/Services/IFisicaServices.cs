@@ -5,15 +5,7 @@ using System.Text;
 
 namespace martloc.ApplicationCore.Interfaces.Services
 {
-  public  interface IPessoaServices: IServiceBase<Pessoa>
+  public  interface IFisicaServices: IServiceBase<Fisica>
     {
-
-        //public override Pessoa Adicionar(Pessoa p) {
-        
-        
-            
-
-        //}
-
     }
 }

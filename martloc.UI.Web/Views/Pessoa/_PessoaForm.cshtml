@@ -1,4 +1,145 @@
 ﻿
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+
+<div class="modal-body">
+
+    <form method="post" name="fmarca" id="fmarca">
+        <input type="hidden" id="Id" name="Id">
+        <div class="row">
+
+            <div class="col-2">
+                <div class="form-group">
+                    <label for="descricao">Tipo Pessoa</label>
+
+                    <select id="discriminator">
+                        <option value="F">Fisica</option>
+                        <option value="J">Juridíca</option>
+                    </select>
+                    @*<input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">*@
+                </div>
+            </div>
+
+
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="descricao">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="descricao">Fone</label>
+                    <input type="text" class="form-control" id="fone" name="fone" placeholder="Fone">
+                </div>
+            </div>
+
+
+
+            @*<div class="col-2">
+                <div class="form-group">
+                    <label for="descricao">Status</label>
+                    <select class="form-control" id="status">
+                        <option value="1">Ativo</option>
+                        <option value="0">Inativo</option>
+                    </select>
+                </div>
+            </div>*@
+
+        </div>
+
+
+        <div class="row">
+
+
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">CPF</label>
+                    <input type="text" class="form-control" id="Cpf" name="Cpf" placeholder="Endereço">
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">Apelido</label>
+                    <input type="text" class="form-control" id="Apelido" name="Apelido" placeholder="Endereço">
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">DataNascimento</label>
+                    <input type="text" class="form-control" id="DataNascimento" name="DataNascimento" placeholder="Endereço">
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço">
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+
+
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">CNPJ</label>
+                    <input type="text" class="form-control" id="Cnpj" name="Cnpj" placeholder="CNPJ">
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">Nome Fantasia</label>
+                    <input type="text" class="form-control" id="NomeFantasia" name="NomeFantasia" placeholder="NomeFantasia">
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">Inscricao Municipal</label>
+                    <input type="text" class="form-control" id="InscricaoMunicipal" name="InscricaoMunicipal" placeholder="Endereço">
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">Inscricao Estadual</label>
+                    <input type="text" class="form-control" id="InscricaoEstadual" name="InscricaoEstadual" placeholder="Inscricao Estadual">
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">Data Fundacao</label>
+                    <input type="text" class="form-control" id="DataFundacao" name="DataFundacao" placeholder="DataFundacao">
+                </div>
+            </div>
+
+        </div>
+
+
+        
+
+        
+        
+        
+
+
+
+
+        <div class="float-left">
+
+            <button type="button" id="btnSalvar" class="btn btn-primary">
+                Salvar
+                <i class="ld ld-ring ld-spin d-none"></i>
+            </button>
+            <button type="button" id="btnSalvarContinuar" class="btn  btn-outline-primary">Salvar & Continuar  <i class="ld ld-ring ld-spin  d-none"></i> </button>
+        </div>
+    </form>
+</div>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using martloc.ApplicationCore.Entity;
 using martloc.ApplicationCore.Interfaces.Services;
 using martloc.UI.Web.Models;
 using Microsoft.AspNetCore.Http;
@@ -15,11 +16,19 @@ namespace martloc.UI.Web.Controllers
     {
 
         private readonly IPessoaServices _pessoaServices;
+        private readonly IFisicaServices _fisicaServices;
+        private readonly IJuridicaServices _juridicaServices;
+        
         private readonly IMapper _mapper;
 
-        public PessoaController(IPessoaServices pessoaServices, IMapper mapper)
+        public PessoaController(IPessoaServices pessoaServices,
+                               IFisicaServices fisicaServices,
+                                 IJuridicaServices juridicaServices,
+                               IMapper mapper)
         {
             _pessoaServices = pessoaServices;
+            _fisicaServices = fisicaServices;
+            _juridicaServices = juridicaServices;
             _mapper = mapper;
         }
 
@@ -43,9 +52,27 @@ namespace martloc.UI.Web.Controllers
 
         // POST: Pessoa/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        //[ValidateAntiForgeryToken]
+        public ActionResult Create(PessoaViewModel model)//IFormCollection collection
         {
+
+            if (model.TipoPessoa=="F")
+            {
+                var fisica = _mapper.Map<PessoaViewModel, Fisica>(model);
+                _fisicaServices.Adicionar(fisica);
+            }
+            else {
+                var juridica = _mapper.Map<PessoaViewModel, Juridica>(model);
+                _juridicaServices.Adicionar(juridica);
+            }
+
+
+
+
+    
+            
+
+
             try
             {
                 // TODO: Add insert logic here
@@ -61,17 +88,38 @@ namespace martloc.UI.Web.Controllers
         // GET: Pessoa/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+          
+            return Json(_pessoaServices.ObterPorId(id));
         }
 
         // POST: Pessoa/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        //[ValidateAntiForgeryToken]
+        public ActionResult Edit(PessoaViewModel model)//int id, IFormCollection collection
         {
+
+
+            
             try
             {
                 // TODO: Add update logic here
+                _pessoaServices.Atualizar(_mapper.Map<PessoaViewModel, Pessoa>(model));
+
+
+                //if (model.TipoPessoa == "F")
+                //{
+                //    var fisica = _mapper.Map<PessoaViewModel, Fisica>(model);
+                //    _fisicaServices.Atualizar(fisica);
+                //}
+                //else
+                //{
+                //    var juridica = _mapper.Map<PessoaViewModel, Juridica>(model);
+                //    _juridicaServices.Atualizar(juridica);
+                //}
+
+
+
+
 
                 return RedirectToAction(nameof(Index));
             }

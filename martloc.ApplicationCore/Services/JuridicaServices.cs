@@ -7,17 +7,13 @@ using System.Text;
 
 namespace martloc.ApplicationCore.Services
 {
-    public class PessoaServices : ServiceBase<Pessoa>, IPessoaServices
+    public class JuridicaServices : ServiceBase<Juridica>, IJuridicaServices
     {
 
-        protected readonly IRepository<Pessoa> _pessoaReposotory;
+        protected readonly IRepository<Juridica> _pessoaReposotory;
 
-        public PessoaServices(IRepository<Pessoa> Repository) : base(Repository)
+        public JuridicaServices(IRepository<Juridica> Repository) : base(Repository)
         {
         }
-
-
-
-          
     }
 }

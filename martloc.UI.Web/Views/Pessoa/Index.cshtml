@@ -5,6 +5,7 @@
     ViewData["Title"] = "Pessoas";
 }
 
+
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -14,7 +15,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Marcas</li>
+                    <li class="breadcrumb-item active">Pessoas</li>
                 </ol>
             </div>
         </div>
@@ -72,11 +73,13 @@
 
 </section>
 
+
+
 <div class="modal fade show" id="modal-lg" aria-modal="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Gerenciamento De Marcas</h4>
+                <h4 class="modal-title">Gerenciamento De Pessoas</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -86,5 +89,5 @@
     </div>
 </div>
 @section Scripts {
-    <script src="~/js/views/pessoa/pessoa.js"></script>
+    <script asp-append-version="true"   src="~/js/views/pessoa/pessoa.js"></script>
 }

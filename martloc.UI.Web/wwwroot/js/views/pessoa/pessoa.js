@@ -42,7 +42,7 @@ function List() {
             "data": null,
             "render": function (data, type, row, meta) {
 
-                return `<button type="button" class="btn btn-primary create"  data-id="${data.id}"   data-toggle="modal" data-target="#modal-lg" >
+                return `<button type="button" class="btn btn-primary edit"  data-id="${data.id}"    >
                             <i class="fas fa-edit"></i>
 
                         </button> <button type="button"  class="btn btn-danger delete"  data-id="${data.id}" >
@@ -70,13 +70,32 @@ function AddOrUpadate(keepForm = false, table, Toast, button) {
 
             $.ajax({
                 type: "POST",
-                url: "/marca/Create",
+                url: "/pessoa/Create",
                 data: {
-                    Status: $('#status').val(),
-                    Descricao: $('#descricao').val()
+                    //Pessoa
+                    NomeRazao: $('#nome').val(),
+                    Fone: $('#fone').val(),
+                    Endereco: $('#endereco').val(),
+                    TipoPessoa: $('#discriminator').val(),
+
+                    //Fisica
+                    Cpf: $('#Cpf').val(),
+                    Apelido: $('#Apelido').val(),
+                    DataNascimento: $('#Apelido').val(),
+
+
+                    Cnpj: $('#Cnpj').val(),
+                    NomeFantasia: $('#NomeFantasia').val(),
+                    InscricaoMunicipal: $('#InscricaoMunicipal').val(),
+                    InscricaoEstadual: $('#InscricaoEstadual').val(),
+                    DataFundacao: $('#DataFundacao').val(),
+
+
+
                 },
                 success: function (e) {
                     table.ajax.reload();
+                    limpar()
                     if (!keepForm) {
                         $('.modal').modal('hide');
                     }
@@ -103,14 +122,31 @@ function AddOrUpadate(keepForm = false, table, Toast, button) {
 
             $.ajax({
                 type: "POST",
-                url: "/marca/Edit",
+                url: "/pessoa/Edit",
                 data: {
-                    id: $('#Id').val(),
-                    Status: $('#status').val(),
-                    Descricao: $('#descricao').val()
+                    Id: $('#Id').val(),
+                    NomeRazao: $('#nome').val(),
+                    Fone: $('#fone').val(),
+                    Endereco: $('#endereco').val(),
+
+                        //Fisica
+                    Cpf: $('#Cpf').val(),
+                    Apelido: $('#Apelido').val(),
+                    DataNascimento: $('#Apelido').val(),
+
+                    //juridica
+                    Cnpj: $('#Cnpj').val(),
+                    NomeFantasia: $('#NomeFantasia').val(),
+                    InscricaoMunicipal: $('#InscricaoMunicipal').val(),
+                    InscricaoEstadual: $('#InscricaoEstadual').val(),
+                    DataFundacao: $('#DataFundacao').val(),
+
+
+
                 },
                 success: function (e) {
                     table.ajax.reload();
+                    limpar()
                     Toast.fire({
                         type: 'success',
                         title: 'Marca Atualizada com sucesso!'
@@ -201,6 +237,30 @@ function Delete(table, Toast, button) {
 
 }
 
+
+function limpar() {
+    $('#Id').val(0)
+    $('#nome').val('')
+    $('#fone').val('')
+    $('#endereco').val('')
+
+    $('#discriminator').val('F').change()
+    //Fisica
+    $('#Cpf').val('');
+    $('#Apelido').val('');
+    $('#DataNascimento').val('');
+
+   
+    $('#Cnpj').val('')
+    $('#NomeFantasia').val('')
+    $('#InscricaoMunicipal').val('')
+    $('#InscricaoEstadual').val('')
+    $('#DataFundacao').val('')
+
+
+
+}
+
 $(document).ready(function () {
 
     var table = List();
@@ -211,10 +271,62 @@ $(document).ready(function () {
         timer: 3000
     });
 
-    $('#example tbody').on('click', '.create', function () {
+    $('#example tbody').on('click', '.edit', function () {
         $('#Id').val($(this).data('id'))
-        $('#descricao').val($(this).data('descricao'))
-        $('#status').val($(this).data('status'))
+
+        $.ajax({
+            type: "GET",
+            url: "/pessoa/Edit",
+            data: {
+                id: $('#Id').val()
+            },
+            success: function (e) {
+
+                $('#nome').val(e.nomeRazao)
+                $('#fone').val(e.fone)
+                $('#endereco').val(e.endereco)
+
+                if (e.discriminator == 'Fisica') {
+                    $('#discriminator').val('F').change()
+                    //Fisica
+                    $('#Cpf').val(e.cpf);
+                    $('#Apelido').val(e.apelido);
+                    $('#DataNascimento').val(e.dataNascimento);
+                } else {
+                    $('#discriminator').val('J').change()
+                     $('#Cnpj').val(e.cnpj)
+                     $('#NomeFantasia').val(e.nomeFantasi)
+                     $('#InscricaoMunicipal').val(e.inscricaoMunicipal)
+                     $('#InscricaoEstadual').val(e.inscricaoEstadual)
+                     $('#DataFundacao').val(e.dataFundacao)
+                }
+
+              
+               
+
+
+            
+
+
+
+
+
+                
+                $('#modal-lg').modal({ backdrop: 'static', keyboard: false })
+                $('#modal-lg').modal('show')
+            },
+            error: function (e) {
+
+            }
+          
+        });
+
+
+
+
+
+
+
     });
 
     $('#example tbody').on('click', '.delete', function () {
