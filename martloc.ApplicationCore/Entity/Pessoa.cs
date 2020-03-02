@@ -12,7 +12,7 @@ namespace martloc.ApplicationCore.Entity
         public string Fone { get; set; }
 
         public string Endereco { get; set; }
-        public string Discriminator { get; set; }
+        public int TipoPessoa { get; set; }
         
        public ICollection<Contato> Contatos { get; set; }
 

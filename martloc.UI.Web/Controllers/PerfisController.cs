@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using financeiro.UI.Web.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -37,5 +38,29 @@ namespace financeiro.UI.Web.Controllers
 
             return View(role);
         }
+        [HttpPost]
+        public IActionResult Edit() {
+
+            string id = "c8405b28-211c-4bf2-b388-4d9c04ab1523";
+           var Claims = new List<string>();
+            Claims.Add("List");
+            Claims.Add("Create");
+
+            var role = _roleMngr.Roles.FirstOrDefault(f => f.Id == id);
+
+            foreach (var item in Claims)
+            {
+                _roleMngr.AddClaimAsync(role, new Claim(item, item));
+
+
+            }
+
+
+          
+          
+            return View(role);
+        }
+
+
     }
 }

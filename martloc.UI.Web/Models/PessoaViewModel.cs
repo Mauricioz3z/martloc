@@ -8,8 +8,8 @@ namespace martloc.UI.Web.Models
     public class PessoaViewModel
     {
         public int Id { get; set; }
-        public string TipoPessoa { get; set; }
-        public string Discriminator { get; set; }
+
+        public int TipoPessoa { get; set; }
         public string NomeRazao { get; set; }
         public string Fone { get; set; }
 

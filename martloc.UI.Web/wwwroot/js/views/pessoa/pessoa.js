@@ -27,16 +27,16 @@ function List() {
             {
                 "data": "fone"
             },
-        //{
-        //    "data": "status",
-        //    "render": function (data, type, row, meta) {
-        //        if (data == 1) {
-        //            return '<span class="right badge badge-success">Ativo</span>';
-        //        } else {
-        //            return '<span class="right badge badge-danger">Inativo</span>';
-        //        }
-        //    }
-        //},
+        {
+            "data": "tipoPessoa",
+            "render": function (data, type, row, meta) {
+                if (data == 1) {
+                    return '<span class="right badge badge-success">Fisica</span>';
+                } else {
+                    return '<span class="right badge badge-info">Juridica</span>';
+                }
+            }
+        },
 
         {
             "data": null,
@@ -76,14 +76,14 @@ function AddOrUpadate(keepForm = false, table, Toast, button) {
                     NomeRazao: $('#nome').val(),
                     Fone: $('#fone').val(),
                     Endereco: $('#endereco').val(),
-                    TipoPessoa: $('#discriminator').val(),
-
+                    TipoPessoa: $('#TipoPessoa').val(),
+       
                     //Fisica
                     Cpf: $('#Cpf').val(),
                     Apelido: $('#Apelido').val(),
-                    DataNascimento: $('#Apelido').val(),
+                    DataNascimento: $('#DataNascimento').val(),
 
-
+                
                     Cnpj: $('#Cnpj').val(),
                     NomeFantasia: $('#NomeFantasia').val(),
                     InscricaoMunicipal: $('#InscricaoMunicipal').val(),
@@ -128,11 +128,11 @@ function AddOrUpadate(keepForm = false, table, Toast, button) {
                     NomeRazao: $('#nome').val(),
                     Fone: $('#fone').val(),
                     Endereco: $('#endereco').val(),
-
+                    TipoPessoa: $('#TipoPessoa').val(),
                         //Fisica
                     Cpf: $('#Cpf').val(),
                     Apelido: $('#Apelido').val(),
-                    DataNascimento: $('#Apelido').val(),
+                    DataNascimento: $('#DataNascimento').val(),
 
                     //juridica
                     Cnpj: $('#Cnpj').val(),
@@ -244,7 +244,7 @@ function limpar() {
     $('#fone').val('')
     $('#endereco').val('')
 
-    $('#discriminator').val('F').change()
+    $('#TipoPessoa').val('0').change()
     //Fisica
     $('#Cpf').val('');
     $('#Apelido').val('');
@@ -262,6 +262,30 @@ function limpar() {
 }
 
 $(document).ready(function () {
+ 
+    //$(document).on('change', '#TipoPesssoa', function () {
+    //    alert('Change Happened');
+    //});
+    $("#DataNascimento").datepicker({
+        format: 'dd/mm/yyyy',
+        language: 'pt-BR'});
+    $("#DataFundacao").datepicker({
+        format: 'dd/mm/yyyy',
+        language: 'pt-BR'});
+    $(document).on('change', '#TipoPessoa', function () {
+        if (this.value == 0) {
+            $("#juridica").addClass("d-none")
+            $("#fisica").removeClass("d-none")
+        } else {
+
+            $("#juridica").removeClass("d-none")
+            $("#fisica"). addClass("d-none")
+        }
+
+      
+    })
+
+
 
     var table = List();
     const Toast = Swal.mixin({
@@ -286,19 +310,27 @@ $(document).ready(function () {
                 $('#fone').val(e.fone)
                 $('#endereco').val(e.endereco)
 
-                if (e.discriminator == 'Fisica') {
-                    $('#discriminator').val('F').change()
+                if (e.tipoPessoa == '0') {
+                    $('#TipoPessoa').val('0').change()
                     //Fisica
                     $('#Cpf').val(e.cpf);
                     $('#Apelido').val(e.apelido);
-                    $('#DataNascimento').val(e.dataNascimento);
+                    $('#DataNascimento').val(moment(e.dataNascimento).format('DD/MM/YYYY'));
+                
+                    $("#juridica").addClass("d-none")
+                    $("#fisica").removeClass("d-none")
+
+
                 } else {
-                    $('#discriminator').val('J').change()
+                    $('#TipoPessoa').val('1').change()
                      $('#Cnpj').val(e.cnpj)
                      $('#NomeFantasia').val(e.nomeFantasi)
                      $('#InscricaoMunicipal').val(e.inscricaoMunicipal)
                      $('#InscricaoEstadual').val(e.inscricaoEstadual)
-                     $('#DataFundacao').val(e.dataFundacao)
+                    $('#DataFundacao').val(moment(e.dataFundacao).format('DD/MM/YYYY') )
+
+                    $("#juridica").removeClass("d-none")
+                    $("#fisica").addClass("d-none")
                 }
 
               

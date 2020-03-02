@@ -78,6 +78,7 @@ namespace martloc.infrastructure.Data
                 var coordenador = context.Users.FirstOrDefault(u => u.UserName == "coordenador@domain.com");
                 var coordenadorRole = context.Roles.FirstOrDefault(u => u.Name == "Coordenador");
                 context.UserRoles.Add(new IdentityUserRole<string> { UserId = coordenador.Id, RoleId = coordenadorRole.Id });
+                context.SaveChanges();
 
             }
 

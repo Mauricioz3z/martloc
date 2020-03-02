@@ -304,6 +304,9 @@ namespace martloc.infrastructure.Migrations
                     b.Property<string>("NomeRazao")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<int>("TipoPessoa")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Pessoa");

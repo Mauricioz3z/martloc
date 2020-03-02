@@ -9,8 +9,8 @@ using martloc.infrastructure.Data;
 namespace martloc.infrastructure.Migrations
 {
     [DbContext(typeof(BackendContext))]
-    [Migration("20200219031922_mysql")]
-    partial class mysql
+    [Migration("20200302154011_ocean")]
+    partial class ocean
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -305,6 +305,9 @@ namespace martloc.infrastructure.Migrations
 
                     b.Property<string>("NomeRazao")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<int>("TipoPessoa")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

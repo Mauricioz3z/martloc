@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace martloc.infrastructure.Migrations
 {
-    public partial class mysql : Migration
+    public partial class ocean : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -59,6 +59,7 @@ namespace martloc.infrastructure.Migrations
                     NomeRazao = table.Column<string>(nullable: true),
                     Fone = table.Column<string>(nullable: true),
                     Endereco = table.Column<string>(nullable: true),
+                    TipoPessoa = table.Column<int>(nullable: false),
                     Discriminator = table.Column<string>(nullable: false),
                     Cpf = table.Column<string>(nullable: true),
                     Apelido = table.Column<string>(nullable: true),

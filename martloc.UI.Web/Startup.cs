@@ -52,7 +52,7 @@ namespace financeiro.UI.Web
   
             services.AddControllersWithViews();
             services.AddRazorPages();
-            services.AddDbContext<BackendContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //services.AddDbContext<BackendContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             //services.AddMvc().AddRazorPagesOptions(options =>
             //{

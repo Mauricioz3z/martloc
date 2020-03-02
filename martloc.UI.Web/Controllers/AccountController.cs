@@ -132,9 +132,10 @@ namespace martloc.UI.Web.Controllers
             //returnUrl = returnUrl ?? Url.Content("~/");
 
 
-     
-           
-      
+
+            ModelState.Clear();
+
+
             if (ModelState.IsValid)
             {
                 var result = await _signInManager.PasswordSignInAsync(InputLogin.Email, InputLogin.Password, false, false);

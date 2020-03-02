@@ -6,11 +6,13 @@ using AutoMapper;
 using martloc.ApplicationCore.Entity;
 using martloc.ApplicationCore.Interfaces.Services;
 using martloc.UI.Web.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace martloc.UI.Web.Controllers
 {
+    [Authorize(Roles = "Admin,Gerente")]
     public class MarcaController : Controller
     {
         private readonly IMarcaServices _marcaoServices;

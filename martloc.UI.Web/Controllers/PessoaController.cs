@@ -56,7 +56,7 @@ namespace martloc.UI.Web.Controllers
         public ActionResult Create(PessoaViewModel model)//IFormCollection collection
         {
 
-            if (model.TipoPessoa=="F")
+            if (model.TipoPessoa==0)
             {
                 var fisica = _mapper.Map<PessoaViewModel, Fisica>(model);
                 _fisicaServices.Adicionar(fisica);
@@ -88,8 +88,8 @@ namespace martloc.UI.Web.Controllers
         // GET: Pessoa/Edit/5
         public ActionResult Edit(int id)
         {
-          
-            return Json(_pessoaServices.ObterPorId(id));
+            var pessoa = _pessoaServices.ObterPorId(id);
+            return Json(pessoa);
         }
 
         // POST: Pessoa/Edit/5
@@ -102,20 +102,23 @@ namespace martloc.UI.Web.Controllers
             
             try
             {
+
+
                 // TODO: Add update logic here
-                _pessoaServices.Atualizar(_mapper.Map<PessoaViewModel, Pessoa>(model));
+               // _pessoaServices.Atualizar(_mapper.Map<PessoaViewModel, Pessoa>(model));
 
 
-                //if (model.TipoPessoa == "F")
-                //{
-                //    var fisica = _mapper.Map<PessoaViewModel, Fisica>(model);
-                //    _fisicaServices.Atualizar(fisica);
-                //}
-                //else
-                //{
-                //    var juridica = _mapper.Map<PessoaViewModel, Juridica>(model);
-                //    _juridicaServices.Atualizar(juridica);
-                //}
+                if (model.TipoPessoa ==0)
+                {
+                    var fisica = _mapper.Map<PessoaViewModel, Fisica>(model);
+                    _fisicaServices.Atualizar(fisica);
+                }
+                else
+                {
+                    var juridica = _mapper.Map<PessoaViewModel, Juridica>(model);
+               
+                    _juridicaServices.Atualizar(juridica);
+                }
 
 
 
@@ -123,9 +126,9 @@ namespace martloc.UI.Web.Controllers
 
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch(Exeption e)
             {
-                return View();
+                return View(e.Message);
             }
         }
 
