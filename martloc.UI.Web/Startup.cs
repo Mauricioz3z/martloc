@@ -45,20 +45,45 @@ namespace financeiro.UI.Web
 
             }).AddDefaultUI().AddDefaultTokenProviders().AddEntityFrameworkStores<BackendContext>();
 
+            //services.AddDbContext<BackendContext>(options =>
+            //    options.UseMySql(
+            //        Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDbContext<BackendContext>(options =>
                 options.UseMySql(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-  
+    //        services.AddDbContext<BackendContext>(options =>
+    //options.UseMySql(
+    //    Configuration.GetConnectionString("DefaultConnection")));
+    //        services.AddIdentity<Usuario, IdentityRole>()
+    //        .AddRoleManager<RoleManager<IdentityRole>>()
+    //        .AddDefaultUI()
+    //        .AddDefaultTokenProviders()
+    //        .AddEntityFrameworkStores<BackendContext>();
+
+
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+         
+        services.AddAuthorization(options =>
+            {
+                options.AddPolicy("podeCriarMarca", policy => policy.RequireClaim("Marca.Create"));
+                options.AddPolicy("podeEditarMarca", policy => policy.RequireClaim("Marca.Edit"));
+                
+            });
+
+          
+
+
             //services.AddDbContext<BackendContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             //services.AddMvc().AddRazorPagesOptions(options =>
             //{
             //    options.Conventions.AddPageRoute("/Home/Index", "");
 
-      
+
             //});
 
             services.AddMvc()

@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace martloc.UI.Web.Controllers
 {
-    [Authorize(Roles = "Admin,Gerente")]
+    [Authorize(Roles = "Admin,Gerente,Coordenador")]
     public class MarcaController : Controller
     {
         private readonly IMarcaServices _marcaoServices;
@@ -22,8 +22,9 @@ namespace martloc.UI.Web.Controllers
         {
             _marcaoServices= marcaoServices;
             _mapper= mapper;
-         } 
-        // GET: Marca
+         }
+        //// GET: Marca
+        //[Authorize(Policy = "Coordenador")]
         public ActionResult Index()
         {
             return View();
@@ -34,7 +35,7 @@ namespace martloc.UI.Web.Controllers
         {
             return View();
         }
-
+        [Authorize(Policy = "podeCriarMarca")]
         // GET: Marca/Create
         public ActionResult Create()
         {
@@ -65,10 +66,11 @@ namespace martloc.UI.Web.Controllers
 
 
 
-        
+        [Authorize(Policy = "podeEditarMarca")]
         // GET: Marca/Edit/5
         public ActionResult Edit(int id)
         {
+
             return View();
         }
 

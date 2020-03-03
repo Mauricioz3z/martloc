@@ -64,6 +64,7 @@ namespace martloc.infrastructure.Data
                 context.Roles.Add(new IdentityRole { Name = "Admin" });
                 context.Roles.Add(new IdentityRole { Name = "Gerente" });
                 context.Roles.Add(new IdentityRole { Name = "Coordenador" });
+                
                 context.SaveChanges();
 
 

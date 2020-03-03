@@ -39,26 +39,45 @@ namespace financeiro.UI.Web.Controllers
             return View(role);
         }
         [HttpPost]
-        public IActionResult Edit() {
+        public async Task<ActionResult> Edit() {
 
-            string id = "c8405b28-211c-4bf2-b388-4d9c04ab1523";
+            string id = "a56f6ce0-d30d-47f1-9401-5eaf33a096c7";
            var Claims = new List<string>();
-            Claims.Add("List");
-            Claims.Add("Create");
-
+            //Claims.Add("Marca.List");
+            //Claims.Add("Marca.Create");
+            Claims.Add("Marca.Edit");
+           
             var role = _roleMngr.Roles.FirstOrDefault(f => f.Id == id);
+
+
+        
 
             foreach (var item in Claims)
             {
-                _roleMngr.AddClaimAsync(role, new Claim(item, item));
+
+                //_roleMngr.AddClaimAsync(role, new Claim(ClaimTypes.AuthorizationDecision, "List")).Wait();
+                //_roleMngr.AddClaimAsync(role, new Claim(ClaimTypes.AuthorizationDecision, "Create")).Wait();
+
+                _roleMngr.AddClaimAsync(role, new Claim(item, item)).Wait();
+            
+
+                //await _roleMngr.AddClaimAsync(adminRole, new Claim(item, item));
 
 
             }
 
 
-          
-          
-            return View(role);
+            //var c=  new ClaimsIdentity(new Claim[]
+            //      {
+            //          new Claim(ClaimTypes.Name, user.Username.ToString()),
+            //          new Claim(ClaimTypes.Role, user.Role.ToString())
+            //      })
+
+
+
+
+
+            return View();
         }
 
 
