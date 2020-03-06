@@ -1,0 +1,24 @@
+﻿
+
+
+@{
+    Layout = null;
+
+}
+@model List<string>
+    <div class="form-group">
+        <label>Ações</label>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox">
+            <label class="form-check-label">Todos</label>
+        </div>
+
+        @foreach (var item in Model)
+        {
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox">
+                <label class="form-check-label">item</label>
+            </div>
+        }
+
+    </div>

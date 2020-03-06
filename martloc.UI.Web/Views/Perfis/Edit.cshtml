@@ -1,54 +1,125 @@
 ﻿
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Perfils";
 }
 
-<h1>Edit</h1>
-
-<div class="modal-body">
-
-    <form method="post" name="fmarca" id="fmarca">
-        <input type="hidden" id="Id" name="Id">
-        <div class="row">
-
-            <div class="col-10">
-                <div class="form-group">
-                    <label for="descricao">Descrição</label>
-                    <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
-                </div>
+@model IEnumerable<martloc.UI.Web.Models.TelaViewModel> ;
+<sectsion class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>perfil de acesso</h1>
             </div>
-
-            <div class="col-2">
-                <div class="form-group">
-                    <label for="descricao">Status</label>
-                    <select class="form-control" id="status">
-                        <option value="1">Ativo</option>
-                        <option value="0">Inativo</option>
-                    </select>
-                </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Locações > Nova</li>
+                </ol>
             </div>
-
         </div>
+    </div><!-- /.container-fluid -->
+</sectsion>
+
+<section class="content">
+    <div class="row">
+        <div class="col-sm-3"></div>
 
 
 
-        @*<div class="card card-secondary">
+        <div class="col-md-6">
+            <!-- general form elements -->
+            <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">Stus</h3>
+                    <h3 class="card-title">Permissões</h3>
                 </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+
                 <div class="card-body">
+                    <div class="form-group">
+                        <label>Telas</label>
+                        <form role="form" method="get" action="GetAcoes">
+                            <select name="tela" id="tela" class="form-control">
+                                @foreach (var item in Model)
+                                {
 
+                                    <option value="@item.Nome">@item.Nome</option>
+
+                                }
+
+
+                            </select>
+                        </form>
+                    </div>
+
+                    <div id="_acoes">
+
+                    </div>
+
+
+
+                    @*<div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputFile">File input</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="exampleInputFile">
+                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="">Upload</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>*@
                 </div>
-            </div>*@
+                <!-- /.card-body -->
 
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
 
-        <div class="float-left">
+            </div>
 
-            <button type="submit" id="btnSalvar" class="btn btn-primary">
-                Salvar
-                <i class="ld ld-ring ld-spin d-none"></i>
-            </button>
-            <button type="button" id="btnSalvarContinuar" class="btn  btn-outline-primary">Salvar & Continuar  <i class="ld ld-ring ld-spin  d-none"></i> </button>
+            <!-- /.card -->
+
         </div>
-    </form>
-</div>
+        <div class="col-sm-3"></div>
+    </div>
+</section>
+@section scripts {
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#tela').on('change', function (e) {
+                console.log($('#tela').val())
+
+                $.get('/Perfis/GetAcoes?tela='+$('#tela').val(), function (eX) {
+
+
+                    $('#_acoes').load(eX)
+                    console.log('ee',e)
+
+                });
+
+
+            })
+
+        })
+
+
+    </script>
+
+}
