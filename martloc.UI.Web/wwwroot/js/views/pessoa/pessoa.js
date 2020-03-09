@@ -30,7 +30,7 @@ function List() {
         {
             "data": "tipoPessoa",
             "render": function (data, type, row, meta) {
-                if (data == 1) {
+                if (data == 0) {
                     return '<span class="right badge badge-success">Fisica</span>';
                 } else {
                     return '<span class="right badge badge-info">Juridica</span>';
@@ -61,7 +61,7 @@ function AddOrUpadate(keepForm = false, table, Toast, button) {
 
 
 
-    if ($("#fmarca").valid()) {
+    if ($("#fpessoa").valid()) {
 
         buttonLoading.start(button);
 
@@ -80,6 +80,7 @@ function AddOrUpadate(keepForm = false, table, Toast, button) {
        
                     //Fisica
                     Cpf: $('#Cpf').val(),
+                    Rg: $('#Rg').val(),
                     Apelido: $('#Apelido').val(),
                     DataNascimento: $('#DataNascimento').val(),
 
@@ -101,7 +102,7 @@ function AddOrUpadate(keepForm = false, table, Toast, button) {
                     }
                     Toast.fire({
                         type: 'success',
-                        title: 'Marca salva com sucesso!'
+                        title: 'Pessoa salva com sucesso!'
                     })
 
 
@@ -131,6 +132,7 @@ function AddOrUpadate(keepForm = false, table, Toast, button) {
                     TipoPessoa: $('#TipoPessoa').val(),
                         //Fisica
                     Cpf: $('#Cpf').val(),
+                    Rg: $('#Rg').val(),
                     Apelido: $('#Apelido').val(),
                     DataNascimento: $('#DataNascimento').val(),
 
@@ -149,7 +151,7 @@ function AddOrUpadate(keepForm = false, table, Toast, button) {
                     limpar()
                     Toast.fire({
                         type: 'success',
-                        title: 'Marca Atualizada com sucesso!'
+                        title: 'Pessoa Atualizada com sucesso!'
                     })
                     if (!keepForm) {
                         $('.modal').modal('hide');
@@ -193,7 +195,7 @@ function Delete(table, Toast, button) {
 
             $.ajax({
                 type: "POST",
-                url: "/marca/Delete",
+                url: "/pessoa/Delete",
                 data: {
                     id: $(button).data('id')
                 },
@@ -205,7 +207,7 @@ function Delete(table, Toast, button) {
 
                         Toast.fire({
                             type: 'success',
-                            title: 'Marca excluída com sucesso!'
+                            title: 'Pessoa excluída com sucesso!'
                         })
 
                     } else {
@@ -214,7 +216,7 @@ function Delete(table, Toast, button) {
 
                         Toast.fire({
                             type: 'error',
-                            title: 'Não foi possivel excluir esta marca!'
+                            title: 'Não foi possivel excluir esta pessoa!'
                         })
 
                     }
@@ -247,6 +249,7 @@ function limpar() {
     $('#TipoPessoa').val('0').change()
     //Fisica
     $('#Cpf').val('');
+    $('#Rg').val(''),
     $('#Apelido').val('');
     $('#DataNascimento').val('');
 
@@ -262,16 +265,20 @@ function limpar() {
 }
 
 $(document).ready(function () {
- 
-    //$(document).on('change', '#TipoPesssoa', function () {
-    //    alert('Change Happened');
-    //});
+
+
     $("#DataNascimento").datepicker({
         format: 'dd/mm/yyyy',
-        language: 'pt-BR'});
+        language: 'pt-BR'
+    });
+
     $("#DataFundacao").datepicker({
         format: 'dd/mm/yyyy',
-        language: 'pt-BR'});
+        language: 'pt-BR'
+    });
+    $('#Cnpj').mask('00.000.000/0000-00', { reverse: true });
+    $('#Cpf').mask('000.000.000-00', { reverse: true });
+
     $(document).on('change', '#TipoPessoa', function () {
         if (this.value == 0) {
             $("#juridica").addClass("d-none")
@@ -314,6 +321,7 @@ $(document).ready(function () {
                     $('#TipoPessoa').val('0').change()
                     //Fisica
                     $('#Cpf').val(e.cpf);
+                    $('#Rg').val(e.rg),
                     $('#Apelido').val(e.apelido);
                     $('#DataNascimento').val(moment(e.dataNascimento).format('DD/MM/YYYY'));
                 
@@ -374,16 +382,143 @@ $(document).ready(function () {
         AddOrUpadate(false, table, Toast, this)
     });
 
-    $("#fmarca").validate({
+
+    jQuery.validator.addMethod("cnpj", function (value, element) {
+
+        var numeros, digitos, soma, i, resultado, pos, tamanho, digitos_iguais;
+        if (value.length == 0) {
+            return false;
+        }
+
+        value = value.replace(/\D+/g, '');
+        digitos_iguais = 1;
+
+        for (i = 0; i < value.length - 1; i++)
+            if (value.charAt(i) != value.charAt(i + 1)) {
+                digitos_iguais = 0;
+                break;
+            }
+        if (digitos_iguais)
+            return false;
+
+        tamanho = value.length - 2;
+        numeros = value.substring(0, tamanho);
+        digitos = value.substring(tamanho);
+        soma = 0;
+        pos = tamanho - 7;
+        for (i = tamanho; i >= 1; i--) {
+            soma += numeros.charAt(tamanho - i) * pos--;
+            if (pos < 2)
+                pos = 9;
+        }
+        resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+        if (resultado != digitos.charAt(0)) {
+            return false;
+        }
+        tamanho = tamanho + 1;
+        numeros = value.substring(0, tamanho);
+        soma = 0;
+        pos = tamanho - 7;
+        for (i = tamanho; i >= 1; i--) {
+            soma += numeros.charAt(tamanho - i) * pos--;
+            if (pos < 2)
+                pos = 9;
+        }
+
+        resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+
+        return (resultado == digitos.charAt(1));
+    }, "Informe um CNPJ válido.")
+
+    jQuery.validator.addMethod("cpf", function (value, element) {
+        value = jQuery.trim(value);
+
+        value = value.replace('.', '');
+        value = value.replace('.', '');
+        cpf = value.replace('-', '');
+        while (cpf.length < 11) cpf = "0" + cpf;
+        var expReg = /^0+$|^1+$|^2+$|^3+$|^4+$|^5+$|^6+$|^7+$|^8+$|^9+$/;
+        var a = [];
+        var b = new Number;
+        var c = 11;
+        for (i = 0; i < 11; i++) {
+            a[i] = cpf.charAt(i);
+            if (i < 9) b += (a[i] * --c);
+        }
+        if ((x = b % 11) < 2) { a[9] = 0 } else { a[9] = 11 - x }
+        b = 0;
+        c = 11;
+        for (y = 0; y < 10; y++) b += (a[y] * c--);
+        if ((x = b % 11) < 2) { a[10] = 0; } else { a[10] = 11 - x; }
+        if ((cpf.charAt(9) != a[9]) || (cpf.charAt(10) != a[10]) || cpf.match(expReg)) return false;
+        return true;
+    }, "Informe um CPF válido."); // Mensagem padrão
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $("#fpessoa").validate({
         rules: {
-            descricao: {
+            nome: {
                 required: true,
                 maxlength: 100
+            },
+            fone: {
+                required: true,
+                maxlength: 20
+            },
+            endereco: {
+                required: true,
+                maxlength: 255
+            },
+            Cpf: {
+                required: true,
+                cpf: true
+            },
+            Rg:  {
+                required: true,
+                maxlength: 20
+             },
+            Apelido: {
+                required: true,
+                maxlength: 100
+            },
+            DataNascimento: {
+                required: true,
+                maxlength: 20
+            },
+            Cnpj: {
+                required: true,
+                cnpj: true
+            },
+            NomeFantasia: {
+                required: true,
+                maxlength: 150
+            },
+            InscricaoMunicipal: {
+               
+                maxlength: 100
+            },
+            InscricaoEstadual: {
+                maxlength: 100
+            },
+            DataFundacao: {
+                required: true,
+                maxlength: 20
             }
         },
         messages: {
             descricao: {
-                required: "Por favor informe a descrição da marca!",
+                required: "Por favor informe a descrição da pessoa!",
                 maxlength: "Máximo de 100 caracteres permitido"
             },
         }

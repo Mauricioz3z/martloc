@@ -71,7 +71,10 @@ namespace financeiro.UI.Web
             {
                 options.AddPolicy("podeCriarMarca", policy => policy.RequireClaim("Marca.Create"));
                 options.AddPolicy("podeEditarMarca", policy => policy.RequireClaim("Marca.Edit"));
-                
+                options.AddPolicy("podeDeletarMarca", policy => policy.RequireClaim("Marca.Delete"));
+                options.AddPolicy("podeObterMarcaAjax", policy => policy.RequireClaim("Marca.GetMarcas"));
+                options.AddPolicy("podeListarMarcas", policy => policy.RequireClaim("Marca.Index"));
+
             });
 
           

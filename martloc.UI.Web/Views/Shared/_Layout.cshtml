@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="~/theme/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="~/theme/plugins/sweetalert2/sweetalert2.min.css">
     <link rel="stylesheet" href="~/theme/plugins/bootstrap-switch/css/bootstrap3/bootstrap-switch.min.css">
-
+   
     <link rel="stylesheet" type="text/css" href="~/theme/plugins/loadingio/loading.min.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/loadingio/ldbutton@v1.0.1/dist/ldbtn.min.css" />
 
@@ -137,10 +137,10 @@
                         <span class="badge badge-warning navbar-badge">15</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                                    <a href="/Identity/Account/Manage" class="dropdown-item">
-                        <i class="fas fa-users mr-2"></i>Perfil
-                    
-                    </a>
+                        <a href="/Identity/Account/Manage" class="dropdown-item">
+                            <i class="fas fa-users mr-2"></i>Perfil
+
+                        </a>
                         <form class="dropdown-item" method="post" action="/Account/Logout">
                             <button type="submit" class="nav-link btn btn-link text-dark">   <i class="fas fa-sign-out-alt"></i> Sair</button>
                         </form>
@@ -148,22 +148,22 @@
 
                         @*<span class="dropdown-item dropdown-header">15 Notifications</span>
 
-        <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
-        </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
-            <span class="float-right text-muted text-sm">12 hours</span>
-        </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 new reports
-            <span class="float-right text-muted text-sm">2 days</span>
-        </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>*@
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-envelope mr-2"></i> 4 new messages
+                                <span class="float-right text-muted text-sm">3 mins</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-users mr-2"></i> 8 friend requests
+                                <span class="float-right text-muted text-sm">12 hours</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-file mr-2"></i> 3 new reports
+                                <span class="float-right text-muted text-sm">2 days</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>*@
                     </div>
                 </li>
 
@@ -227,7 +227,7 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                               
+
 
                                 <li class="nav-item">
                                     <a href="/perfis" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "perfis" ? "active" : "")">
@@ -255,7 +255,7 @@
                                         <p>Categorias</p>
                                     </a>
                                 </li>
-                                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin") || User.IsInRole("Gerente"))
+                                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin") || User.IsInRole("Gerente") || User.IsInRole("Coordenador"))
                                 {
 
                                     <li class="nav-item">
@@ -406,6 +406,7 @@
     <script src="~/theme/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
     <script src="~/theme/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
     <script src="~/theme/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.min.js"></script>
+    <script src="~/theme/plugins/Jquery-mask/jquery.mask.min.js"></script>
 
     @RenderSection("Scripts", required: false)
 </body>

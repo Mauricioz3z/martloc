@@ -37,7 +37,7 @@ namespace martloc.UI.Web.Controllers
 
 
 
-        public IActionResult GetAcoes(string tela) {
+        public async Task<ActionResult> GetAcoes(string tela,string RoleId) {
 
             Assembly asm = Assembly.GetExecutingAssembly();
 
@@ -56,6 +56,10 @@ namespace martloc.UI.Web.Controllers
             var telaSelecioanda = controlleractionlist.FirstOrDefault(f => f.Nome == tela);
             if (telaSelecioanda != null)
             {
+                var role = _roleMngr.Roles.FirstOrDefault(f => f.Id == RoleId);
+                var Claimsx = await _roleMngr.GetClaimsAsync(role);
+                ViewBag.acoesSelecionadas = Claimsx.Select(e=>e.Value).ToList();
+                ViewBag.telaSelecionada = telaSelecioanda.Nome;
                 return View("~/Views/Perfis/_Acoes.cshtml", telaSelecioanda.Acoes);
             }
             else {
@@ -68,7 +72,7 @@ namespace martloc.UI.Web.Controllers
 
         public IActionResult Edit(string id)
         {
-            var role = _roleMngr.Roles.Where(f => f.Id == id).ToList().Select(e => new RolesViewModel { Id = e.Id, Name = e.Name });
+            var role = _roleMngr.Roles.Where(f => f.Id == id).ToList().Select(e => new RolesViewModel { Id = e.Id, Name = e.Name }).FirstOrDefault();
 
             Assembly asm = Assembly.GetExecutingAssembly();
 
@@ -86,43 +90,31 @@ namespace martloc.UI.Web.Controllers
 
 
             ViewBag.Controller = controlleractionlist;
-
+            ViewBag.RoleName = role.Name;
+            ViewBag.RoleId = role.Id;
 
             return View(controlleractionlist);
         }
         [HttpPost]
-        public async Task<ActionResult> Edit() {
+        public async Task<ActionResult> Edit(PerfilViewModel perfil) {
+            var role = _roleMngr.Roles.FirstOrDefault(f => f.Id == perfil.Id);
 
-           // string id = "a56f6ce0-d30d-47f1-9401-5eaf33a096c7";
-           //var Claims = new List<string>();
-           // //Claims.Add("Marca.List");
-           // //Claims.Add("Marca.Create");
-           // Claims.Add("Marca.Edit");
-           
-           // var role = _roleMngr.Roles.FirstOrDefault(f => f.Id == id);
+            var storedClaims = await _roleMngr.GetClaimsAsync(role);
+            foreach (var item in storedClaims)
+            {
+                _roleMngr.RemoveClaimAsync(role, item).Wait();
 
 
-
-           // var storedClaims = await _roleMngr.GetClaimsAsync(role);
-           // foreach (var item in storedClaims)
-           // {
-           //     _roleMngr.RemoveClaimAsync(role, item).Wait();
+            }
 
 
-           // }
+            foreach (var item in perfil.Claims)
+            {
+                _roleMngr.AddClaimAsync(role, new Claim(item, item)).Wait();
 
+            }
 
-           // foreach (var item in Claims)
-           // {
-           //     _roleMngr.AddClaimAsync(role, new Claim(item, item)).Wait();
-  
-           // }
-
-       
-
-
-
-            return View();
+            return Ok();
         }
 
 

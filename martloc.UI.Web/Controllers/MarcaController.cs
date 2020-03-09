@@ -23,39 +23,30 @@ namespace martloc.UI.Web.Controllers
             _marcaoServices= marcaoServices;
             _mapper= mapper;
          }
-        //// GET: Marca
-        //[Authorize(Policy = "Coordenador")]
+        [Authorize(Policy = "podeListarMarcas")]
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Marca/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
         [Authorize(Policy = "podeCriarMarca")]
-        // GET: Marca/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Marca/Create
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
+        [Authorize(Policy = "podeCriarMarca")]
         public int Create(MarcaViewModel model)
         {
-
 
           var marca=  _mapper.Map<Marca>(model);
 
             try
             {
                 _marcaoServices.Adicionar(marca);
-                // TODO: Add insert logic here
-
+          
                 return 1;
             }
             catch (Exeption e)
@@ -65,18 +56,9 @@ namespace martloc.UI.Web.Controllers
         }
 
 
-
-        [Authorize(Policy = "podeEditarMarca")]
-        // GET: Marca/Edit/5
-        public ActionResult Edit(int id)
-        {
-
-            return View();
-        }
-
-        // POST: Marca/Edit/5
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
+        [Authorize(Policy = "podeEditarMarca")]
         public int Edit(MarcaViewModel model)
         {
 
@@ -85,7 +67,6 @@ namespace martloc.UI.Web.Controllers
             try
             {
                 _marcaoServices.Atualizar(marca);
-                // TODO: Add insert logic here
 
                 return 1;
             }
@@ -95,15 +76,10 @@ namespace martloc.UI.Web.Controllers
             }
         }
 
-        // GET: Marca/Delete/5
-        //public ActionResult Delete(int id)
-        //{
-        //    return View();
-        //}
 
-        // POST: Marca/Delete/5
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
+        [Authorize(Policy = "podeDeletarMarca")]
         public int Delete(int id)
         {
             try
@@ -121,13 +97,11 @@ namespace martloc.UI.Web.Controllers
             }
         }
 
+        [Authorize(Policy = "podeObterMarcaAjax")]
         public ActionResult GetMarcas()
         {
-
-
             var marcas = _mapper.Map<List<MarcaViewModel>>(_marcaoServices.List);
-
-                return Json(new{data= marcas });
+            return Json(new{data= marcas });
             
         }
 

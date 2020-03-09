@@ -36,10 +36,17 @@
                 <!-- form start -->
 
                 <div class="card-body">
+                  <input type="hidden" value="@ViewBag.RoleId" id="RoleId" />
+                    <div class="form-group">
+                        <label>Perfil</label>
+                      <input type="text" value="@ViewBag.RoleName" name="" id="nomePerfil" class="form-control" />
+                    </div>
+
                     <div class="form-group">
                         <label>Telas</label>
                         <form role="form" method="get" action="GetAcoes">
                             <select name="tela" id="tela" class="form-control">
+                                <option value="">Selecione</option>
                                 @foreach (var item in Model)
                                 {
 
@@ -52,41 +59,22 @@
                         </form>
                     </div>
 
-                    <div id="_acoes">
+                    <div id="_acoes" style="
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 10px;
+
+">
 
                     </div>
 
 
 
-                    @*<div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputFile">File input</label>
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="exampleInputFile">
-                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                </div>
-                                <div class="input-group-append">
-                                    <span class="input-group-text" id="">Upload</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                        </div>*@
                 </div>
-                <!-- /.card-body -->
+             
 
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" id="enviar" class="btn btn-primary">Salvar</button>
                 </div>
 
             </div>
@@ -106,16 +94,38 @@
             $('#tela').on('change', function (e) {
                 console.log($('#tela').val())
 
-                $.get('/Perfis/GetAcoes?tela='+$('#tela').val(), function (eX) {
+                $.get('/Perfis/GetAcoes',{ tela: $('#tela').val(), RoleId: $('#RoleId').val() }, function (eX) {
 
-
-                    $('#_acoes').load(eX)
-                    console.log('ee',e)
+                    
+                    $('#_acoes').html(eX)
+               
 
                 });
 
 
             })
+
+                    $('#enviar').on('click', function() { 
+                        var array = []; 
+                        $("input:checkbox[name=acoes]:checked").each(function() { 
+                            array.push($('#tela').val()+'.'+$(this).val()); 
+                        });
+
+                        $.post('/Perfis/Edit', { Id:$('#RoleId').val(), Nome:$('#nomePerfil').val(), Claims: array }, function (res) {
+
+
+                            console.log(res);
+
+                });
+
+
+                                    console.log('array',array)
+        }); 
+
+
+
+
+
 
         })
 

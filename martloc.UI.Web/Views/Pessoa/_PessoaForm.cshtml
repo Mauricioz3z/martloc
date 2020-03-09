@@ -2,7 +2,7 @@
 
 <div class="modal-body">
 
-    <form method="post" name="fmarca" id="fmarca">
+    <form method="post" name="fpessoa" id="fpessoa">
         <input type="hidden" id="Id" name="Id">
         <div class="row">
 
@@ -14,10 +14,9 @@
                         <option value="0">Fisica</option>
                         <option value="1">Juridíca</option>
                     </select>
-                    @*<input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">*@
+
                 </div>
             </div>
-
 
             <div class="col-6">
                 <div class="form-group">
@@ -34,16 +33,7 @@
 
 
 
-            @*<div class="col-2">
-            <div class="form-group">
-                <label for="descricao">Status</label>
-                <select class="form-control" id="status">
-                    <option value="1">Ativo</option>
-                    <option value="0">Inativo</option>
-                </select>
-            </div>
-        </div>*@
-
+          
             <div class="col-12">
                 <div class="form-group">
                     <label for="endereco">Endereço</label>
@@ -53,28 +43,35 @@
         </div>
 
 
-        <div id="fisica" class="row d-none">
+        <div id="fisica" class="row">
 
 
 
             <div class="col-12">
                 <div class="form-group">
                     <label for="endereco">CPF</label>
-                    <input type="text" class="form-control" id="Cpf" name="Cpf" placeholder="Endereço">
+                    <input type="text" class="form-control" id="Cpf" name="Cpf" placeholder="CPF">
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="endereco">RG:</label>
+                    <input type="text" class="form-control" id="Rg" name="Rg" placeholder="RG">
                 </div>
             </div>
 
             <div class="col-12">
                 <div class="form-group">
                     <label for="endereco">Apelido</label>
-                    <input type="text" class="form-control" id="Apelido" name="Apelido" placeholder="Endereço">
+                    <input type="text" class="form-control" id="Apelido" name="Apelido" placeholder="Apelido">
                 </div>
             </div>
 
             <div class="col-12">
                 <div class="form-group">
                     <label for="endereco">DataNascimento</label>
-                    <input type="text" class="form-control" id="DataNascimento" name="DataNascimento" placeholder="Endereço">
+                    <input type="text" class="form-control" id="DataNascimento" name="DataNascimento" placeholder="Data De Nascimento">
                 </div>
             </div>
 
@@ -82,7 +79,7 @@
 
         </div>
 
-        <div id="juridica"  class="row  d-none">
+        <div id="juridica" class="row  d-none">
 
 
 
@@ -100,24 +97,31 @@
                 </div>
             </div>
 
+
+
+
             <div class="col-12">
                 <div class="form-group">
                     <label for="endereco">Inscricao Municipal</label>
-                    <input type="text" class="form-control" id="InscricaoMunicipal" name="InscricaoMunicipal" placeholder="Endereço">
+                    <input type="text" class="form-control" id="InscricaoMunicipal" name="InscricaoMunicipal" placeholder="Inscricão Municipal">
                 </div>
             </div>
+
+
 
             <div class="col-12">
                 <div class="form-group">
                     <label for="endereco">Inscricao Estadual</label>
-                    <input type="text" class="form-control" id="InscricaoEstadual" name="InscricaoEstadual" placeholder="Inscricao Estadual">
+                    <input type="text" class="form-control" id="InscricaoEstadual" name="InscricaoEstadual" placeholder="Inscricão Estadual">
                 </div>
             </div>
 
+           
+
             <div class="col-12">
                 <div class="form-group">
-                    <label for="endereco">Data Fundacao</label>
-                    <input type="text" class="form-control" id="DataFundacao" name="DataFundacao" placeholder="DataFundacao">
+                    <label for="endereco">Data Fundação</label>
+                    <input type="text" class="form-control" id="DataFundacao" name="DataFundacao" placeholder="Data Fundação">
                 </div>
             </div>
 
