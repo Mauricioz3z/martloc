@@ -206,8 +206,16 @@ namespace martloc.UI.Web.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Proibido()
+        {
 
-        [HttpPost]
+            return View();
+        }
+        
+
+
+    [HttpPost]
         public IActionResult Logout()
         {
 

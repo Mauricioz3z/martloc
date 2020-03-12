@@ -352,3 +352,4 @@ C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Ra
 C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Pessoa\_PessoaForm.cshtml.g.cs
 C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Perfis\Edit.cshtml.g.cs
 C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Perfis\_Acoes.cshtml.g.cs
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Proibido.cshtml.g.cs

@@ -102,6 +102,15 @@ namespace financeiro.UI.Web
             {
                 options.KnownProxies.Add(IPAddress.Parse("10.0.0.100"));
             });
+
+            //services.Configure<IdentityOptions>(opt =>
+            //{
+            //    opt.Cookies.ApplicationCookie.LoginPath = new PathString("/login");
+            //});
+            services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/Login");
+
+            services.ConfigureApplicationCookie(options => options.AccessDeniedPath = "/Account/Proibido");
+
             //Identity/Account/Register
 
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));

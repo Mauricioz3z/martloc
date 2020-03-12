@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace martloc.UI.Web.Controllers
 {
-    [Authorize(Roles = "Admin")]
+  
     public class PerfisController : Controller
     {
         private RoleManager<IdentityRole> _roleMngr { get; }
