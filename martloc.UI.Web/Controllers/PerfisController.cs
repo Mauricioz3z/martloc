@@ -107,8 +107,6 @@ namespace martloc.UI.Web.Controllers
             var role = _roleMngr.Roles.FirstOrDefault(f => f.Id == perfil.Id);
 
             var storedClaims = await _roleMngr.GetClaimsAsync(role);
-
-            
             foreach (var item in storedClaims)
             {
                 _roleMngr.RemoveClaimAsync(role, item).Wait();
