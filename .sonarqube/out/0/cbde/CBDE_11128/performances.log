@@ -1,0 +1,124 @@
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Entity\Categoria.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Entity\Cliente.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Entity\ContaReceber.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Entity\Contato.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Entity\Defeito.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Entity\Endereco.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Entity\Equipamento.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Entity\Fisica.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Entity\Juridica.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Entity\Locacao.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Entity\LocacaoItens.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Entity\Marca.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Entity\Obra.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Entity\Pessoa.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Entity\Usuario.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Enum\Status.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Interfaces\Repository\IClienteRepository.cs
+ObterClientePorContato 3
+ObterClientePorContato -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Interfaces\Repository\ILocacaoRepository.cs
+ObterLocacoesInadimplente 1
+ObterLocacoesInadimplente -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Interfaces\Repository\IRepository.cs
+Adicionar 1
+Adicionar -1
+Atualizar 1
+Atualizar -1
+ObterTodos 1
+ObterTodos -1
+ObterPorId 1
+ObterPorId -1
+Buscar 1
+Buscar -1
+Remover 1
+Remover -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Interfaces\Services\IClienteServices.cs
+ObterClientePorContato 4
+ObterClientePorContato -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Interfaces\Services\IFisicaServices.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Interfaces\Services\IJuridicaServices.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Interfaces\Services\ILocacaoServices.cs
+ObterLocacoesInadimplente 1
+ObterLocacoesInadimplente -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Interfaces\Services\IMarcaServices.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Interfaces\Services\IPessoaServices.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Interfaces\Services\IServiceBase.cs
+Adicionar 1
+Adicionar -1
+Atualizar 1
+Atualizar -1
+ObterPorId 1
+ObterPorId -1
+Buscar 1
+Buscar -1
+Remover 1
+Remover -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Interfaces\Services\IUsuarioServices.cs
+addRole 1
+addRole -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Services\ClienteServices.cs
+ObterClientePorContato 61
+ObterClientePorContato -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Services\FisicaServices.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Services\JuridicaServices.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Services\LocacaoServices.cs
+ObterLocacoesInadimplente 2
+ObterLocacoesInadimplente -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Services\MarcaServices.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Services\PessoaServices.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Services\ServiceBase.cs
+Adicionar 2
+Adicionar -1
+Atualizar 2
+Atualizar -1
+Buscar 2
+Buscar -1
+ObterPorId 2
+ObterPorId -1
+Remover 3
+Remover -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Services\UsuarioServices.cs
+addRole 4
+addRole -1
+addRole 3
+addRole -1
+
+C:\Users\Mauricio\AppData\Local\Temp\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\obj\Debug\netcoreapp3.1\martloc.ApplicationCore.AssemblyInfo.cs
+

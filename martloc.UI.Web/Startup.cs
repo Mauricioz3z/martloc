@@ -75,6 +75,17 @@ namespace financeiro.UI.Web
                 options.AddPolicy("podeObterMarcaAjax", policy => policy.RequireClaim("Marca.GetMarcas"));
                 options.AddPolicy("podeListarMarcas", policy => policy.RequireClaim("Marca.Index"));
 
+
+
+                options.AddPolicy("podeEditarPerfil", policy => policy.RequireClaim("Perfis.Edit"));
+
+                options.AddPolicy("podeListarPerfil", policy => policy.RequireClaim("Perfis.Index"));
+
+                options.AddPolicy("precisaRealizarLogin", policy =>  policy.RequireAuthenticatedUser()) ;
+
+                
+
+
             });
 
           

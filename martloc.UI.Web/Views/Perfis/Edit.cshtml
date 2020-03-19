@@ -89,6 +89,30 @@
 
     <script>
 
+        var buttonLoading = {
+            start: function (button) {
+
+
+        $(button).html('Salvando... <i class="ld ld-ring ld-spin"></i>')
+        $(button).attr('disabled', 'disabled');
+
+    },
+            stop: function (button) {
+
+        $(button).html('Salvar')
+        $(button).removeAttr('disabled');
+
+    }
+}
+
+            const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+            });
+
+
         $(document).ready(function () {
 
             $('#tela').on('change', function (e) {
@@ -105,7 +129,9 @@
 
             })
 
-                    $('#enviar').on('click', function() { 
+            $('#enviar').on('click', function () {
+                       var button = $('#enviar');
+                         buttonLoading.start(button);
                         var array = []; 
                         $("input:checkbox[name=acoes]:checked").each(function() { 
                             array.push($('#tela').val()+'.'+$(this).val()); 
@@ -113,6 +139,11 @@
 
                         $.post('/Perfis/Edit', { Id:$('#RoleId').val(), Nome:$('#nomePerfil').val(), Claims: array }, function (res) {
 
+                                  Toast.fire({
+                        type: 'success',
+                        title: 'Perfil atualizado com sucesso!'
+                                  })
+                            buttonLoading.stop(button);
 
                             console.log(res);
 

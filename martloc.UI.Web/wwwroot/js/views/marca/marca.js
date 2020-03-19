@@ -64,9 +64,28 @@ function AddOrUpadate(keepForm = false, table, Toast, button) {
         if ($('#Id').val() <= 0) {
 
 
+
+
+
+
+
+
+         
+
+
+
+
+
+
+
+
             $.ajax({
                 type: "POST",
                 url: "/marca/Create",
+                beforeSend: function (request) {
+
+                    request.setRequestHeader("RequestVerificationToken", $("[name='__RequestVerificationToken']").val());
+                },
                 data: {
                     Status: $('#status').val(),
                     Descricao: $('#descricao').val()
@@ -100,6 +119,10 @@ function AddOrUpadate(keepForm = false, table, Toast, button) {
             $.ajax({
                 type: "POST",
                 url: "/marca/Edit",
+                beforeSend: function (request) {
+
+                    request.setRequestHeader("RequestVerificationToken", $("[name='__RequestVerificationToken']").val());
+                },
                 data: {
                     id: $('#Id').val(),
                     Status: $('#status').val(),
@@ -154,6 +177,10 @@ function Delete(table, Toast, button) {
             $.ajax({
                 type: "POST",
                 url: "/marca/Delete",
+                beforeSend: function (request) {
+
+                    request.setRequestHeader("RequestVerificationToken", $("[name='__RequestVerificationToken']").val());
+                },
                 data: {
                     id: $(button).data('id')
                 },

@@ -1,42 +1,205 @@
-﻿
+﻿var buttonLoading = {
+    start: function (button) {
+        $($(button).find('i')).removeClass('d-none');
+        $(button).attr('disabled', 'disabled');
 
-$(document).ready(function () {
-
-
-
-    function List() {
-
+    },
+    stop: function (button) {
+        $($(button).find('i')).addClass('d-none');
+        $(button).removeAttr('disabled');
 
     }
+}
 
-    var table = $('#example').DataTable({
+function List() {
+
+    return $('#example').DataTable({
         "language": {
             "url": "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
         },
         "ajax": "/marca/GetMarcas",
-        "columns": [
-            { "data": "id", },
-            { "data": "descricao" },
-            {
-                "data": "status", "render": function (data, type, row, meta) {
-                    if (data == 1) { return '<span class="right badge badge-success">Ativo</span>'; }
-                    else { return '<span class="right badge badge-danger">Inativo</span>'; }
+        "columns": [{
+            "data": "id",
+        },
+        {
+            "data": "descricao"
+        },
+        {
+            "data": "status",
+            "render": function (data, type, row, meta) {
+                if (data == 1) {
+                    return '<span class="right badge badge-success">Ativo</span>';
+                } else {
+                    return '<span class="right badge badge-danger">Inativo</span>';
                 }
-            },
+            }
+        },
 
-            {
-                "data": null, "render": function (data, type, row, meta) {
+        {
+            "data": null,
+            "render": function (data, type, row, meta) {
 
-                    return `<button type="button" class="btn btn-primary create" data-descricao="${data.descricao}" data-id="${data.id}"  data-status="${data.status}" data-toggle="modal" data-target="#modal-lg" >
+                return `<button type="button" class="btn btn-primary create" data-descricao="${data.descricao}" data-id="${data.id}"  data-status="${data.status}" data-toggle="modal" data-target="#modal-lg" >
                             <i class="fas fa-edit"></i>
                         </button> <button type="button"  class="btn btn-danger delete"  data-id="${data.id}" >
                             <i class="fas fa-trash"></i>
                         </button>`;
-                }
-            },
+            }
+        },
         ],
-        "order": [[1, 'asc']],});
+        "order": [
+            [1, 'asc']
+        ],
+    });
+}
 
+function AddOrUpadate(keepForm = false, table, Toast, button) {
+
+
+
+    if ($("#fmarca").valid()) {
+
+        buttonLoading.start(button);
+
+        if ($('#Id').val() <= 0) {
+
+
+            $.ajax({
+                type: "POST",
+                url: "/marca/Create",
+                data: {
+                    Status: $('#status').val(),
+                    Descricao: $('#descricao').val()
+                },
+                success: function (e) {
+                    table.ajax.reload();
+                    if (!keepForm) {
+                        $('.modal').modal('hide');
+                    }
+                    Toast.fire({
+                        type: 'success',
+                        title: 'Marca salva com sucesso!'
+                    })
+
+
+                },
+                error: function (e) {
+
+
+                },
+                complete: function () {
+                    buttonLoading.stop(button);
+                }
+
+            });
+
+        } else {
+
+
+
+            $.ajax({
+                type: "POST",
+                url: "/marca/Edit",
+                data: {
+                    id: $('#Id').val(),
+                    Status: $('#status').val(),
+                    Descricao: $('#descricao').val()
+                },
+                success: function (e) {
+                    table.ajax.reload();
+                    Toast.fire({
+                        type: 'success',
+                        title: 'Marca Atualizada com sucesso!'
+                    })
+                    if (!keepForm) {
+                        $('.modal').modal('hide');
+                    }
+                   
+                },
+                error: function (e) {
+                   
+                },
+                complete: function () {
+                    buttonLoading.stop(button);
+                }
+            });
+        }
+
+
+        $('#Id').val(0)
+        $('#descricao').val("")
+    }
+
+
+
+}
+
+function Delete(table, Toast, button) {
+
+
+    $(button).html('<i class="ld ld-ring ld-spin"></i>')
+
+    Swal.fire({
+        title: 'Tem certeza?',
+        text: "Você não poderá reverter isso!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sim, excluir!'
+    }).then((result) => {
+        if (result.value) {
+
+
+            $.ajax({
+                type: "POST",
+                url: "/marca/Delete",
+                data: {
+                    id: $(button).data('id')
+                },
+                success: function (e) {
+
+                    if (e > 0) {
+                        table.ajax.reload();
+
+
+                        Toast.fire({
+                            type: 'success',
+                            title: 'Marca excluída com sucesso!'
+                        })
+
+                    } else {
+                        table.ajax.reload();
+
+
+                        Toast.fire({
+                            type: 'error',
+                            title: 'Não foi possivel excluir esta marca!'
+                        })
+
+                    }
+
+
+
+                },
+                error: function (e) {
+                    console.log(e)
+                },
+
+            });
+
+
+        } else {
+
+            $(button).html('<i class="fas fa-trash"></i>')
+        }
+    })
+
+}
+
+$(document).ready(function () {
+
+    var table = List();
     const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
@@ -44,168 +207,24 @@ $(document).ready(function () {
         timer: 3000
     });
 
-
     $('#example tbody').on('click', '.create', function () {
         $('#Id').val($(this).data('id'))
         $('#descricao').val($(this).data('descricao'))
         $('#status').val($(this).data('status'))
-
     });
 
     $('#example tbody').on('click', '.delete', function () {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.value) {
-
-
-                $.ajax({
-                    type: "POST",
-                    url: "/marca/Delete",
-                    data: { id: $(this).data('id') },
-                    success: function (e) {
-
-                        if (e > 0) {
-                            table.ajax.reload();
-                            Swal.fire(
-                                'Deletado!',
-                                'Marca excluída',
-                                'success'
-                            )
-                        } else {
-                            table.ajax.reload();
-                            Swal.fire(
-                                'Erro!',
-                                'Não foi possivel excluir esta marca',
-                                'error'
-                            )
-
-                        }
-
-
-                
-                    },
-                    error: function (e) { console.log(e) },
-
-                });
-
-             
-            }
-        })
-
-
-
-       
+        Delete(table, Toast, this)
     });
 
-    
-
-    
-
     $('#btnSalvarContinuar').on('click', function () {
-
-        if ($("#fmarca").valid()) {
-
-            if ($('#Id').val() <= 0) {
-                Toast.fire({
-                    type: 'success',
-                    title: 'Marca salva com sucesso!'
-                })
-
-                $.ajax({
-                    type: "POST",
-                    url: "/marca/Create",
-                    data: { Status: 1, Descricao: $('#descricao').val() },
-                    success: function (e) {
-                        table.ajax.reload();
-                        console.log(e)
-
-                    },
-                    error: function (e) { console.log(e) },
-
-                });
-
-            } else {
-
-                Toast.fire({
-                    type: 'success',
-                    title: 'Marca Atualizada com sucesso!'
-                })
-
-                $.ajax({
-                    type: "POST",
-                    url: "/marca/Edit",
-                    data: { id: $('#Id').val(), Status: 1, Descricao: $('#descricao').val() },
-                    success: function (e) {
-                        table.ajax.reload();
-                        console.log(e)
-                    },
-                    error: function (e) { console.log(e) },
-
-                });
-            }
-            $('#Id').val(0)
-            $('#descricao').val("")
-        }
+        AddOrUpadate(true, table, Toast, this)
     })
-
 
     $('#btnSalvar').on('click', function () {
 
-        if ($("#fmarca").valid()) {
-
-            if ($('#Id').val() <= 0) {
-                Toast.fire({
-                    type: 'success',
-                    title: 'Marca salva com sucesso!'
-                })
-
-                $.ajax({
-                    type: "POST",
-                    url: "/marca/Create",
-                    data: { Status: $('#status').val(), Descricao: $('#descricao').val() },
-                    success: function (e) {
-                        table.ajax.reload();
-                        $('.modal').modal('hide');
-                        console.log(e)
-
-                    },
-                    error: function (e) { console.log(e) },
-
-                });
-
-            } else {
-
-                Toast.fire({
-                    type: 'success',
-                    title: 'Marca Atualizada com sucesso!'
-                })
-
-                $.ajax({
-                    type: "POST",
-                    url: "/marca/Edit",
-                    data: { id: $('#Id').val(), Status: $('#status').val(), Descricao: $('#descricao').val() },
-                    success: function (e) {
-                        table.ajax.reload();
-                        console.log(e)
-                    },
-                    error: function (e) { console.log(e) },
-
-                });
-            }
-            $('#Id').val(0)
-            $('#descricao').val("")
-        }
-
-
+        AddOrUpadate(false, table, Toast, this)
     });
-
 
     $("#fmarca").validate({
         rules: {

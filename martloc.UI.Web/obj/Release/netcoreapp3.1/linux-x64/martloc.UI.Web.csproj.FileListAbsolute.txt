@@ -171,3 +171,7 @@ C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Release\netcoreapp3.1\
 C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Release\netcoreapp3.1\linux-x64\martloc.UI.Web.dll
 C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Release\netcoreapp3.1\linux-x64\martloc.UI.Web.pdb
 C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Release\netcoreapp3.1\linux-x64\martloc.UI.Web.csprojAssemblyReference.cache
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Release\netcoreapp3.1\linux-x64\Razor\Views\Account\Proibido.cshtml.g.cs
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Release\netcoreapp3.1\linux-x64\Razor\Views\Perfis\Edit.cshtml.g.cs
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Release\netcoreapp3.1\linux-x64\Razor\Views\Perfis\_Acoes.cshtml.g.cs
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Release\netcoreapp3.1\linux-x64\Razor\Views\Pessoa\_PessoaForm.cshtml.g.cs

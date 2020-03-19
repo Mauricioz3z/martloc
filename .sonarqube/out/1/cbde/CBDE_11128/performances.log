@@ -1,0 +1,78 @@
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Data\BackendContext.cs
+OnModelCreating 8
+OnModelCreating -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Data\DbInitializer.cs
+Initialize 4
+Initialize -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\EntityConfig\ClienteMap.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\EntityConfig\EquipamentoMap.cs
+Configure 1
+Configure -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\EntityConfig\LocacaoItensMap.cs
+Configure 1
+Configure -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\EntityConfig\PessoaMap.cs
+Configure 2
+Configure -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Migrations\20200302154011_ocean.cs
+Up 1
+Up -1
+Down 5
+Down -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Migrations\20200302154011_ocean.Designer.cs
+BuildTargetModel 2
+BuildTargetModel -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Migrations\20200307220010_adicionadoCampoRg.cs
+Up 2
+Up -1
+Down 2
+Down -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Migrations\20200307220010_adicionadoCampoRg.Designer.cs
+BuildTargetModel 2
+BuildTargetModel -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Migrations\BackendContextModelSnapshot.cs
+BuildModel 1
+BuildModel -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Repositoty\ClienteRepository.cs
+ObterClientePorContato 2
+ObterClientePorContato -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Repositoty\FisicaRepository.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Repositoty\LocacaoRepository.cs
+ObterLocacoesInadimplente 1
+ObterLocacoesInadimplente -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Repositoty\MarcaRepository.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Repositoty\PessoaRepository.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Repositoty\Repository.cs
+Adicionar 3
+Adicionar -1
+Atualizar 3
+Atualizar -1
+Buscar 3
+Buscar -1
+ObterPorId 2
+ObterPorId -1
+ObterTodos 2
+ObterTodos -1
+Remover 3
+Remover -1
+
+C:\Users\Mauricio\AppData\Local\Temp\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\obj\Debug\netcoreapp3.1\martloc.infrastructure.AssemblyInfo.cs
+

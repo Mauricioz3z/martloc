@@ -54,6 +54,7 @@
     #notfound {
         position: relative;
         height: 100vh;
+        background-color: #fff;
     }
 
         #notfound .notfound {
@@ -106,8 +107,8 @@
                 }
 
             .notfound .notfound-404 h1 {
-                font-family: 'Cabin', sans-serif;
-                color: #000;
+                /*font-family: 'Cabin', sans-serif;*/
+                /*color: #000;
                 font-weight: 700;
                 margin: 0;
                 font-size: 90px;
@@ -119,15 +120,15 @@
                 left: 50%;
                 text-align: center;
                 height: 40px;
-                line-height: 40px;
+                line-height: 40px;*/
             }
 
         .notfound h2 {
-            font-family: 'Cabin', sans-serif;
+            /*font-family: 'Cabin', sans-serif;
             font-size: 33px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 7px;
+            letter-spacing: 7px;*/
         }
 
         .notfound p {
@@ -160,14 +161,19 @@
 <div id="notfound">
     <div class="notfound">
         <div class="notfound-404">
-            <div></div>
-            <h1>403</h1>
+            @*<div></div>*@
+            @*<h1>403</h1>*@
+            <img  style="width: 240px;" src="~/images/proibido.jpg" />
             @*<img src="~/images/cross.png" />*@
         </div>
-        <h2>Sem Acesso</h2>
+        <div class="col-12">
+            <h2>Sem Acesso</h2>
 
-        <p>Desculpe, parece que você não tem permissão para acessar esta pagina!</p>
-        <a href="/">Voltar ao Inicio</a>
+            <p>Desculpe, parece que você não tem permissão para acessar esta pagina!</p>
+            <a href="/">Voltar ao Inicio</a>
+        </div>
+
+     
     </div>
 </div>
 

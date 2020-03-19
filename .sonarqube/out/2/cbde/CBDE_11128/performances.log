@@ -1,0 +1,284 @@
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Controllers\AccountController.cs
+Register 2
+Register -1
+Register 1
+Register -1
+Login 1
+Login -1
+Login 2
+Login -1
+Proibido 2
+Proibido -1
+Logout 2
+Logout -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Controllers\ClienteController.cs
+Index 2
+Index -1
+Details 2
+Details -1
+Create 2
+Create -1
+Create 1
+Create -1
+Edit 2
+Edit -1
+Edit 1
+Edit -1
+Delete 2
+Delete -1
+Delete 1
+Delete -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Controllers\EquipamentoController.cs
+Index 2
+Index -1
+Details 2
+Details -1
+Create 2
+Create -1
+Create 1
+Create -1
+Edit 2
+Edit -1
+Edit 1
+Edit -1
+Delete 2
+Delete -1
+Delete 1
+Delete -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Controllers\Exeption.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Controllers\HomeController.cs
+Index 2
+Index -1
+Privacy 1
+Privacy -1
+Error 1
+Error -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Controllers\LocacaoController.cs
+Index 2
+Index -1
+Create 1
+Create -1
+GetLocacoes 2
+GetLocacoes -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Controllers\MarcaController.cs
+Index 2
+Index -1
+Create 2
+Create -1
+Create 1
+Create -1
+Edit 1
+Edit -1
+Delete 1
+Delete -1
+GetMarcas 2
+GetMarcas -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Controllers\PerfisController.cs
+Index 1
+Index -1
+GetAcoes 1
+GetAcoes -1
+Edit 1
+Edit -1
+Edit 1
+Edit -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Controllers\PessoaController.cs
+Index 2
+Index -1
+Details 2
+Details -1
+Create 1
+Create -1
+Create 1
+Create -1
+Edit 2
+Edit -1
+Edit 1
+Edit -1
+Delete 2
+Delete -1
+Delete 1
+Delete -1
+GetPessoas 3
+GetPessoas -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Controllers\RelatoriosController.cs
+Index 2
+Index -1
+Detalhes 2
+Detalhes -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Controllers\UsuariosController.cs
+Index 1
+Index -1
+Edit 1
+Edit -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Models\CategoriaViewModel.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Models\ContatoViewModel.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Models\EquipamentoViewModel.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Models\ErrorViewModel.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Models\FisicaViewModel.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Models\JuridicaViewModel.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Models\LocacaoItensViewModel.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Models\LocacaoViewModel.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Models\MarcaViewModel.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Models\PerfilViewModel.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Models\PessoaViewModel.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Models\RolesViewModel.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Models\TelaViewModel.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Models\UsuarioViewModel.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\NewtonsoftJson.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Program.cs
+Main 1
+Main -1
+CreateHostBuilder 1
+CreateHostBuilder -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\Startup.cs
+ConfigureServices 1
+ConfigureServices -1
+Configure 2
+Configure -1
+
+C:\Users\Mauricio\AppData\Local\Temp\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\martloc.UI.Web.MvcApplicationPartsAssemblyInfo.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\martloc.UI.Web.RazorAssemblyInfo.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\martloc.UI.Web.AssemblyInfo.cs
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login2.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Proibido.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Equipamento\Index.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Locacao\Create.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Locacao\Index.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Marca\Create.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Marca\Index.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Marca\_MarcaForm.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Perfis\Edit.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Perfis\Index.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Perfis\_Acoes.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Pessoa\Index.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Pessoa\_PessoaForm.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Relatorios\Detalhes.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Relatorios\Index.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Edit.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Index.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+ExecuteAsync 1
+ExecuteAsync -1
+
+C:\Users\Mauricio\source\repos\martloc\martloc.UI.Web\obj\Debug\netcoreapp3.1\martloc.UI.Web.RazorTargetAssemblyInfo.cs
+

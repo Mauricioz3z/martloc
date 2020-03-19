@@ -9,8 +9,8 @@ C:\Users\Mauricio\source\repos\martloc\financeiro.ApplicationCore\obj\Debug\netc
 C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\bin\Debug\netcoreapp3.1\martloc.ApplicationCore.deps.json
 C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\bin\Debug\netcoreapp3.1\martloc.ApplicationCore.dll
 C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\bin\Debug\netcoreapp3.1\martloc.ApplicationCore.pdb
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\obj\Debug\netcoreapp3.1\martloc.ApplicationCore.csprojAssemblyReference.cache
 C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\obj\Debug\netcoreapp3.1\martloc.ApplicationCore.AssemblyInfoInputs.cache
 C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\obj\Debug\netcoreapp3.1\martloc.ApplicationCore.AssemblyInfo.cs
 C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\obj\Debug\netcoreapp3.1\martloc.ApplicationCore.dll
 C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\obj\Debug\netcoreapp3.1\martloc.ApplicationCore.pdb
-C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\obj\Debug\netcoreapp3.1\martloc.ApplicationCore.csprojAssemblyReference.cache

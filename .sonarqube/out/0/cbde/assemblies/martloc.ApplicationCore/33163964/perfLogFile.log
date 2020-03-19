@@ -1,0 +1,9 @@
+File name	Line	Function	Duration[ms]	Explored nodes
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Services\ClienteServices.cs	22	_martloc.ApplicationCore.Services.ClienteServices.ObterClientePorContato$int$	0	2
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Services\LocacaoServices.cs	22	_martloc.ApplicationCore.Services.LocacaoServices.ObterLocacoesInadimplente$$	0	2
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Services\ServiceBase.cs	52	_martloc.ApplicationCore.Services.ServiceBase$T$.Adicionar$T$	0	2
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Services\ServiceBase.cs	57	_martloc.ApplicationCore.Services.ServiceBase$T$.Atualizar$T$	0	3
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Services\ServiceBase.cs	62	_martloc.ApplicationCore.Services.ServiceBase$T$.Buscar$System.Linq.Expressions.Expression$System.Func$T.bool$$$	0	2
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Services\ServiceBase.cs	67	_martloc.ApplicationCore.Services.ServiceBase$T$.ObterPorId$int$	0	2
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Services\ServiceBase.cs	72	_martloc.ApplicationCore.Services.ServiceBase$T$.Remover$T$	0	3
+C:\Users\Mauricio\source\repos\martloc\martloc.ApplicationCore\Services\UsuarioServices.cs	39	_martloc.ApplicationCore.Services.UsuarioServices.addRole$martloc.ApplicationCore.Entity.Usuario$	0	2

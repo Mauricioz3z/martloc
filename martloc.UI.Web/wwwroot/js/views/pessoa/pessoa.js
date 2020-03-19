@@ -71,6 +71,10 @@ function AddOrUpadate(keepForm = false, table, Toast, button) {
             $.ajax({
                 type: "POST",
                 url: "/pessoa/Create",
+                beforeSend: function (request) {
+                  
+                    request.setRequestHeader("RequestVerificationToken", $("[name='__RequestVerificationToken']").val());
+                },
                 data: {
                     //Pessoa
                     NomeRazao: $('#nome').val(),
@@ -95,6 +99,11 @@ function AddOrUpadate(keepForm = false, table, Toast, button) {
 
                 },
                 success: function (e) {
+
+                    if (e.resposta) {
+                        console.log(e.resposta)
+                    }
+
                     table.ajax.reload();
                     limpar()
                     if (!keepForm) {
@@ -196,6 +205,10 @@ function Delete(table, Toast, button) {
             $.ajax({
                 type: "POST",
                 url: "/pessoa/Delete",
+                beforeSend: function (request) {
+
+                    request.setRequestHeader("RequestVerificationToken", $("[name='__RequestVerificationToken']").val());
+                },
                 data: {
                     id: $(button).data('id')
                 },

@@ -1,0 +1,12 @@
+File name	Line	Function	Duration[ms]	Explored nodes
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Migrations\20200302154011_ocean.cs	373	_martloc.infrastructure.Migrations.ocean.Down$Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder$	0	3
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Migrations\20200307220010_adicionadoCampoRg.cs	6	_martloc.infrastructure.Migrations.adicionadoCampoRg.Up$Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder$	0	3
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Migrations\20200307220010_adicionadoCampoRg.cs	14	_martloc.infrastructure.Migrations.adicionadoCampoRg.Down$Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder$	0	3
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Data\BackendContext.cs	31	_martloc.infrastructure.Data.BackendContext.OnModelCreating$Microsoft.EntityFrameworkCore.ModelBuilder$	0	3
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\EntityConfig\PessoaMap.cs	11	_martloc.infrastructure.EntityConfig.PessoaMap.Configure$Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder$martloc.ApplicationCore.Entity.Pessoa$$	0	3
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Repositoty\Repository.cs	20	_financeiro.infrastructure.Repositoty.Repository$TEntity$.Adicionar$TEntity$	0	2
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Repositoty\Repository.cs	27	_financeiro.infrastructure.Repositoty.Repository$TEntity$.Atualizar$TEntity$	0	3
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Repositoty\Repository.cs	33	_financeiro.infrastructure.Repositoty.Repository$TEntity$.Buscar$System.Linq.Expressions.Expression$System.Func$TEntity.bool$$$	0	2
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Repositoty\Repository.cs	38	_financeiro.infrastructure.Repositoty.Repository$TEntity$.ObterPorId$int$	0	2
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Repositoty\Repository.cs	43	_financeiro.infrastructure.Repositoty.Repository$TEntity$.ObterTodos$$	0	2
+C:\Users\Mauricio\source\repos\martloc\martloc.infrastructure\Repositoty\Repository.cs	48	_financeiro.infrastructure.Repositoty.Repository$TEntity$.Remover$TEntity$	0	3

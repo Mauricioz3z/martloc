@@ -1,13 +1,10 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using martloc.ApplicationCore.Entity;
 using martloc.ApplicationCore.Interfaces.Services;
 using martloc.UI.Web.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace martloc.UI.Web.Controllers
@@ -15,14 +12,14 @@ namespace martloc.UI.Web.Controllers
     [Authorize(Roles = "Admin,Gerente,Coordenador")]
     public class MarcaController : Controller
     {
-        private readonly IMarcaServices _marcaoServices;
+        private readonly IMarcaServices _marcaServices;
         private readonly IMapper _mapper;
 
-        public MarcaController(IMarcaServices marcaoServices, IMapper mapper)
+        public MarcaController(IMarcaServices marcaServices, IMapper mapper)
         {
-            _marcaoServices= marcaoServices;
+            _marcaServices = marcaServices;
             _mapper= mapper;
-         }
+        }
         [Authorize(Policy = "podeListarMarcas")]
         public ActionResult Index()
         {
@@ -38,20 +35,22 @@ namespace martloc.UI.Web.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Policy = "podeCriarMarca")]
-        public int Create(MarcaViewModel model)
+        public IActionResult Create(MarcaViewModel model)
         {
+
 
           var marca=  _mapper.Map<Marca>(model);
 
             try
             {
-                _marcaoServices.Adicionar(marca);
-          
-                return 1;
+                _marcaServices.Adicionar(marca);
+
+                return  Json(new { resposta=1});
             }
             catch (Exeption e)
             {
-                return -1;
+               
+                return Json(new { resposta = -1 });
             }
         }
 
@@ -66,7 +65,7 @@ namespace martloc.UI.Web.Controllers
 
             try
             {
-                _marcaoServices.Atualizar(marca);
+                _marcaServices.Atualizar(marca);
 
                 return 1;
             }
@@ -84,9 +83,9 @@ namespace martloc.UI.Web.Controllers
         {
             try
             {
-                var marca =_marcaoServices.ObterPorId(id);
+                var marca =_marcaServices.ObterPorId(id);
                 if (marca != null) {
-                    _marcaoServices.Remover(marca);
+                    _marcaServices.Remover(marca);
                     return 1;
                 }
                 else { return -1; }
@@ -100,7 +99,7 @@ namespace martloc.UI.Web.Controllers
         [Authorize(Policy = "podeObterMarcaAjax")]
         public ActionResult GetMarcas()
         {
-            var marcas = _mapper.Map<List<MarcaViewModel>>(_marcaoServices.List);
+            var marcas = _mapper.Map<List<MarcaViewModel>>(_marcaServices.List);
             return Json(new{data= marcas });
             
         }

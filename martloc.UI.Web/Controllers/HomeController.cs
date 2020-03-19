@@ -14,8 +14,8 @@ namespace financeiro.UI.Web.Controllers
     public class HomeController : Controller
     {
 
-       
 
+        [Authorize(Policy = "precisaRealizarLogin")]
         public IActionResult Index()
         {
           
