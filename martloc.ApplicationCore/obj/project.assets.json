@@ -798,8 +798,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mauricio\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Mauricio\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -810,9 +809,6 @@
       "packagesPath": "C:\\Users\\Mauricio\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Mauricio\\source\\repos\\martloc\\martloc.ApplicationCore\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\Mauricio\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -858,7 +854,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
