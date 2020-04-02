@@ -46,5 +46,7 @@
 * [ ] Emitir relatório de problemas frequentes de cada equipamento
 * [ ] Emitir relatório de contas a receber pagas parcialmente
 * [ ] Emitir relatório de movimentação financeira
-
-
+## Estrutura do projeto.
+<p align="center">
+  <img src="https://github.com/Mauricioz3z/martloc/blob/master/martloc.UI.Web/diagram.jpg?raw=true">
+</p>
